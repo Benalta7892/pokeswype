@@ -1,0 +1,44 @@
+.pikachu-logo {
+  background-image: asset-url("pikachu-logo.png");
+  background-repeat: no-repeat;
+  background-size: fill;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  width: 400px;
+  height: 300px;
+  margin-left: 8px;
+  z-index: 3;
+  position: relative;
+}
+.icon-star {
+  background-image: asset-url("icon-star.png");
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 110px;
+  right: 5px;
+  width: 110px;
+  height: 90px;
+  z-index: 2;
+}
+.pokeball-1 {
+  background-image: asset-url("pokeball-1.png");
+  position: absolute;
+  background-repeat: no-repeat;
+  top: -70px;
+  right: -60px;
+  width: 130px;
+  height: 130px;
+  z-index: 2;
+}
+.pokeball-2 {
+  background-image: asset-url("pokeball-2.png");
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 10px;
+  left: -70px;
+  width: 130px;
+  height: 130px;
+  z-index: 2;
+}
