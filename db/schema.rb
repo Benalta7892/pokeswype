@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_151546) do
     t.text "description"
     t.integer "price"
     t.string "serie"
-    t.string "released_date"
+    t.date "released_date"
     t.string "number"
     t.string "rarity"
     t.string "category"
