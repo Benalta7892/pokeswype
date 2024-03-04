@@ -11,6 +11,8 @@
   border: 3px solid #a3cfdc;
   margin-top: 0;
   font-size: 30px;
+  background: #abd4df !important;
+  padding: 6px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -33,5 +35,13 @@
 }
 
 .pokeball {
-  width: 100px;
+  width: 95px;
+  position: absolute;
+  right: 155px;
+  top: -26px;
+  scale: 1.15;
+}
+
+.messages {
+  padding-left: 110px;
 }

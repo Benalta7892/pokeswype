@@ -1,16 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-  <nav class="navbar fixed-bottom navbar-light bg-light">
             <%= link_to image_tag("collection.png"), "#", class: "nav-link" %>
-            <%= link_to image_tag("Search.png"), "#", class: "nav-link" %>
+            <%= link_to image_tag("Search.png"), "#" %>
             <%= link_to image_tag("pokeballnavbar.png"), "#", class: "pokeball" %>
-            <%= link_to image_tag("Envelope.png"), "#", class: "nav-link" %>
+            <%= link_to image_tag("Envelope.png"), "#", class: "messages" %>
             <% if user_signed_in? %>
               <%=  link_to image_tag(current_user.photo.url), dashboard_path %>
             <% else %>
               <%= link_to image_tag("User.png"), "new_user_session_path", class: "nav-link" %>
             <% end %>
-</nav>
     </div>
   </div>
 </div>
