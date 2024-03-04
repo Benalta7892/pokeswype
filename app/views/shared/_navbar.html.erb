@@ -1,25 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "pokeballnavbar.png" %>
-    <% end %>
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-            <%= image_tag "User.png" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-            <%= image_tag "Envelope.png" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Collection", "#", class: "nav-link" %>
-            <%= image_tag "collection.png" %>
-            <li class="nav-item">
-            <%= link_to "Search", "#", class: "nav-link" %>
-            <%= image_tag "Search.png" %>
-          </li>S
-      </ul>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+            <%= link_to image_tag("collection.png"), "#", class: "nav-link" %>
+            <%= link_to image_tag("Search.png"), "#", class: "nav-link" %>
+            <%= link_to image_tag("pokeballnavbar.png"), "#", class: "pokeball" %>
+            <%= link_to image_tag("Envelope.png"), "#", class: "nav-link" %>
+            <%= link_to image_tag("User.png"), "new_user_session_path", class: "nav-link" %>
+</nav>
     </div>
   </div>
 </div>
