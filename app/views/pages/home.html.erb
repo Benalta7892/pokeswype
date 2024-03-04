@@ -2,7 +2,7 @@
     <div class="container">
       <div class="pikachu-logo"></div>
       <% @cards.each do |card| %>
-      <%= card.name %>
+      <%= link_to image_tag(card.image), "#", class: "cards-pokemon" %>
       <% end %>
       </div>
   </div>
