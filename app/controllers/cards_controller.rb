@@ -7,4 +7,8 @@ class CardsController < ApplicationController
       @cards = @cards.where("name ILIKE ?", "%#{params[:query]}%")
     end
   end
+    
+  def index
+    @cards = Card.all
+  end
 end
