@@ -1,5 +1,8 @@
   <div class="banner">
     <div class="container">
       <div class="pikachu-logo"></div>
+      <% @cards.each do |card| %>
+      <%= card.name %>
+      <% end %>
       </div>
   </div>
