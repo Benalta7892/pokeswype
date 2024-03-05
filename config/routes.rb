@@ -5,18 +5,18 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
 
   resources :cards, only: [:index, :show, :new, :create] do
-    resources :exchanges, only: [:new, :create]
+    resources :card_interests, only: [:new, :create]
     collection do
       get "search"
     end
   end
 
-  resources :exchanges, only: [:index, :show]
+  resources :exchanges, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :cards, only: [:index]
     resources :user_cards, only: [:index]
+    resources :exchanges, only: [:new, :create]
   end
 end
