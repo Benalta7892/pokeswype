@@ -16,8 +16,8 @@
   background-image: asset-url("icon-star.png");
   position: absolute;
   background-repeat: no-repeat;
-  top: 110px;
-  right: 5px;
+  top: 140px;
+  right: 0px;
   width: 110px;
   height: 90px;
   z-index: 2;
@@ -26,8 +26,8 @@
   background-image: asset-url("pokeball-1.png");
   position: absolute;
   background-repeat: no-repeat;
-  top: -70px;
-  right: -60px;
+  top: -60px;
+  right: 18px;
   width: 130px;
   height: 130px;
   z-index: 2;
@@ -41,4 +41,12 @@
   width: 130px;
   height: 130px;
   z-index: 2;
+}
+.cards-pokemon {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  justify-content: center;
 }
