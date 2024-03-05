@@ -3,6 +3,20 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "dashboard", to: "pages#dashboard"
-  get "cards/search", to: "cards#search"
-end
 
+  resources :cards, only: [:index, :show, :new, :create] do
+    resources :card_interests, only: [:new, :create]
+    collection do
+      get "search"
+    end
+  end
+
+  resources :exchanges, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
+
+  resources :users, only: [:show, :edit, :update] do
+    resources :user_cards, only: [:index]
+    resources :exchanges, only: [:new, :create]
+  end
+end
