@@ -2,37 +2,6 @@
 http://localhost:3000/cards/search?query=pikatchu %>
 
 <div class="container">
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
-  Search a Pokemon
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <%= form_with url: cards_search_path, method: :get, class: "d-flex" do %>
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="searchModalLabel">Type a Pokemon name</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "..."
-            %>
-        </div>
-        <div class="modal-footer">
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
   <div class="row justify-content-center">
     <div class="col-sm-8">
       <div>
