@@ -1,0 +1,13 @@
+<div class="card-profil">
+  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+    <%= image_tag asset_path('back-arraw.png') %>
+  <% end %>
+  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar" %>
+  <h1><%= @user.first_name %></h1>
+  <p><%= @total_cards %> cards</p>
+  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+</div>
+
+<div class="title-wish-list">
+  <h1>My wish list</h1>
+</div>
