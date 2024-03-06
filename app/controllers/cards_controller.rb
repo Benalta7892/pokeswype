@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show]
-  skip_before_action :authenticate_user!, only: :search
+  skip_before_action :authenticate_user!, only: [:search, :index, :show]
 
   def search
     @cards = Card.all
@@ -19,7 +19,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:name, :price, :serie, :image, :release_date, :number, :rarity, :category, photos: [])
+    params.require(:card).permit(:name, :price, :serie, :image, :release_date, :number, :rarity, :category, :extension)
   end
 
   def set_card

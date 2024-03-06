@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :exchanges_as_receiver, class_name: 'Exchange', foreign_key: 'receiver_id'
   has_many :reviews
   has_many :cards_interests
-  has_one_attached :photo
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
