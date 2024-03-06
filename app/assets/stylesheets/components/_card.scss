@@ -1,6 +1,112 @@
 .card-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid #88B3C4;
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
   background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, rgba(46,147,174,0.7637429971988796) 48%);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, rgba(46,147,174,0.7637429971988796) 48%);
+  margin: 8px;
+  position: relative;
+  margin-bottom: 32px;
+
+  .enveloppe {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+  }
+}
+
+
+.onglet-profil-large1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #41B4B2 48%);
+  margin: 8px;
+  position: relative;
+  height: 238px;
+  border: 1px solid #87C4C2;
+
+  h2 {
+    margin: 16px;
+  }
+
+  .litle-slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 8px;
+
+    .img-onglet {
+      width: 90px;
+      height: 115px;
+    }
+
+  }
+}
+
+.onglet-profil-large2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #E1E2A9 48%);
+  margin: 8px;
+  position: relative;
+  height: 238px;
+  border: 1px solid #87C4C2;
+
+  h2 {
+    margin: 16px;
+  }
+
+  .litle-slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 8px;
+
+    .img-onglet {
+      width: 90px;
+      height: 115px;
+    }
+
+  }
+}
+
+
+.onglet-profil {
+  display: flex;
+  flex-direction: column;
+
+  .block {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .onglet-profil-small {
+    justify-content: space-around;
+    align-items: center;
+    width: 49%;
+    background-color: #88B3C4;
+    color: white;
+    font-size: 15px;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding: 0px;
+    margin-top: 16px;
+    border-bottom: 1px solid white;
+    height: 88px;
+  }
 }

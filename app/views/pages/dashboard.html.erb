@@ -1,4 +1,51 @@
 <div class="card-profil">
+  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar" %>
   <h1><%= @user.first_name %></h1>
   <p><%= @total_cards %> cards</p>
+  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+</div>
+
+
+<div class="onglet-profil-large1">
+  <h2>My last captured cards</h2>
+  <div class="litle-slide">
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+  </div>
+</div>
+
+<div class="onglet-profil-large2">
+  <h2>My collection</h2>
+    <div class="litle-slide">
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+      <%= image_tag asset_path('litle-card.png'), class: "img-onglet" %>
+  </div>
+</div>
+
+
+<div class="onglet-profil">
+  <div class="block">
+    <div class="onglet-profil-small">
+      <h2>My favorites</h2>
+    </div>
+
+    <div class="onglet-profil-small">
+      <h2>Wish list</h2>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="onglet-profil-small">
+      <h2>Exchangeable cards</h2>
+    </div>
+
+    <div class="onglet-profil-small">
+      <h2>Current exchanges</h2>
+    </div>
+  </div>
+
 </div>
