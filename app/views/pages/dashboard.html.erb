@@ -32,23 +32,35 @@
 
 <div class="onglet-profil">
   <div class="block">
-    <div class="onglet-profil-small1">
-      <h2>My favorites</h2>
-    </div>
 
-    <div class="onglet-profil-small2">
-      <h2>Wish list</h2>
-    </div>
+    <%= link_to favorites_dashboards_path do %>
+      <div class="onglet-profil-small1">
+        <h2>My favorites</h2>
+      </div>
+    <% end %>
+
+    <%= link_to wish_list_dashboards_path do %>
+      <div class="onglet-profil-small2">
+        <h2>Wish list</h2>
+      </div>
+    <% end %>
+
   </div>
 
   <div class="block">
-    <div class="onglet-profil-small3">
-      <h2>Exchangeable cards</h2>
-    </div>
 
-    <div class="onglet-profil-small4">
-      <h2>Current exchanges</h2>
-    </div>
+    <%= link_to exchangeable_cards_dashboards_path do %>
+      <div class="onglet-profil-small3">
+        <h2>Exchangeable cards</h2>
+      </div>
+    <% end %>
+
+    <%= link_to current_exchanges_dashboards_path do %>
+      <div class="onglet-profil-small4">
+        <h2>Current exchanges</h2>
+      </div>
+    <% end %>
+
   </div>
 
 </div>

@@ -13,18 +13,18 @@ class DashboardsController < ApplicationController
   end
 
   def favorites
-
+    @user = current_user
   end
 
   def wish_list
-
+    @user = current_user
   end
 
   def exchangeable_cards
-
+    @user = current_user
   end
 
   def current_exchanges
-
+    @user = current_user
   end
 end
