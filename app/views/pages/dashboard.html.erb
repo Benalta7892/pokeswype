@@ -1,0 +1,66 @@
+<div class="card-profil">
+  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+    <%= image_tag asset_path('back-arraw.png') %>
+  <% end %>
+  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar" %>
+  <h1><%= @user.first_name %></h1>
+  <p><%= @total_cards %> cards</p>
+  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+</div>
+
+<%= link_to last_captured_dashboards_path do %>
+  <div class="onglet-profil-large1">
+    <h2>My last captured cards</h2>
+    <div class="litle-slide">
+      <% @recent_cards.each do |card| %>
+        <%= image_tag card.image, class: "img-onglet" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to collection_dashboards_path do %>
+  <div class="onglet-profil-large2">
+    <h2>My collection</h2>
+    <div class="litle-slide">
+      <% @cards_collection.first(3).each do |card| %>
+        <%= image_tag card.image, class: "img-onglet" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="onglet-profil">
+  <div class="block">
+
+    <%= link_to favorites_dashboards_path do %>
+      <div class="onglet-profil-small1">
+        <h2>My favorites</h2>
+      </div>
+    <% end %>
+
+    <%= link_to wish_list_dashboards_path do %>
+      <div class="onglet-profil-small2">
+        <h2>Wish list</h2>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="block">
+
+    <%= link_to exchangeable_cards_dashboards_path do %>
+      <div class="onglet-profil-small3">
+        <h2>Exchangeable cards</h2>
+      </div>
+    <% end %>
+
+    <%= link_to current_exchanges_dashboards_path do %>
+      <div class="onglet-profil-small4">
+        <h2>Current exchanges</h2>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
