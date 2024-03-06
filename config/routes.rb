@@ -32,4 +32,8 @@ Rails.application.routes.draw do
     resources :user_cards, only: [:index]
     resources :exchanges, only: [:new, :create]
   end
+
+  resources :chatrooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 end
