@@ -15,6 +15,12 @@
     top: 14px;
     right: 14px;
   }
+
+  .back-arraw {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+  }
 }
 
 
@@ -44,8 +50,8 @@
     margin-bottom: 8px;
 
     .img-onglet {
-      width: 90px;
-      height: 115px;
+      width: 114px;
+      height: 144px;
     }
 
   }
@@ -77,8 +83,8 @@
     margin-bottom: 8px;
 
     .img-onglet {
-      width: 90px;
-      height: 115px;
+      width: 114px;
+      height: 144px;
     }
 
   }
@@ -96,7 +102,7 @@
     margin-right: 8px;
   }
 
-  .onglet-profil-small {
+  .onglet-profil-small1 {
     justify-content: space-around;
     align-items: center;
     width: 49%;
@@ -108,5 +114,82 @@
     margin-top: 16px;
     border-bottom: 1px solid white;
     height: 88px;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #FCB5B5 48%);
+    border: 1px solid #87C4C2;
+  }
+
+  .onglet-profil-small2 {
+    justify-content: space-around;
+    align-items: center;
+    width: 49%;
+    background-color: #88B3C4;
+    color: white;
+    font-size: 15px;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding: 0px;
+    margin-top: 16px;
+    border-bottom: 1px solid white;
+    height: 88px;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #EFB7E9 48%);
+    border: 1px solid #87C4C2;
+  }
+
+  .onglet-profil-small3 {
+    justify-content: space-around;
+    align-items: center;
+    width: 49%;
+    background-color: #88B3C4;
+    color: white;
+    font-size: 15px;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding: 0px;
+    margin-top: 16px;
+    border-bottom: 1px solid white;
+    height: 88px;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
+    border: 1px solid #87C4C2;
+  }
+
+  .onglet-profil-small4 {
+    justify-content: space-around;
+    align-items: center;
+    width: 49%;
+    background-color: #88B3C4;
+    color: white;
+    font-size: 15px;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding: 0px;
+    margin-top: 16px;
+    border-bottom: 1px solid white;
+    height: 88px;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #6899C6 48%);
+    border: 1px solid #87C4C2;
+  }
+}
+
+
+.display-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 8px;
+  padding-top: 18px;
+
+  .pokemon-cards {
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.5);
+    margin: 8px;
+    height: 258px;
+
+    &pokemon-card:hover {
+      box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.8);
+    }
   }
 }

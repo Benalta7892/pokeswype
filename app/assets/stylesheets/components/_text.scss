@@ -2,7 +2,7 @@ h1 {
   font-family: 'Pixelify Sans', sans-serif;
   color: white;
   text-align: center;
-  font-size: 44px;
+  font-size: 34px;
 }
 
 h2  {
@@ -10,6 +10,7 @@ h2  {
   color: #19466e;
   text-align: center;
   font-size: 28px;
+  margin-top: 24px;
 }
 
 p {
@@ -17,4 +18,8 @@ p {
   color: white;
   text-align: center;
   font-size: 24px;
+}
+
+a {
+  text-decoration: none;
 }
