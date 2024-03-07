@@ -1,0 +1,17 @@
+<div class="container-show">
+  <%= link_to root_path, class: "arrow" do %>
+    <%= image_tag asset_path('back-arrow.png') %>
+  <% end %></div>
+  <div class="card-show"><%= link_to image_tag(@card.image), class: "cards-pokemon" %>
+  <div class="card-profil-show">
+      <ul class="text-ul">
+        <li>Name: <%= @card.name %></li>
+        <li>Extension: <%= @card.extension %></li>
+        <li>Serie: <%= @card.serie %></li>
+        <li>Rarity: <%= @card.rarity %></li>
+        <li>Card Number: <%= @card.number %> </li>
+        <li>Trend: <%= @card.price %> Euros </li>
+      </ul>
+  </div>
+  </div>
+</div>

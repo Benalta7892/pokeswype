@@ -4,7 +4,10 @@
       <div class="pikachu-logo"></div>
       <% @cards.each do |card| %>
       <%= link_to image_tag(card.image), "#", class: "cards-pokemon" %>
+      <%= link_to "Bouton", card_path(card) %>
       <% end %>
+
+
     </div>
   </div>
 <%# </div> %>

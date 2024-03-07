@@ -24,7 +24,7 @@ card_serialized = URI.open(url).read
 cards = JSON.parse(card_serialized)
 
 cards['data'].first(10).each do |data|
-  card = Card.create!(name: data['name'], price: data['cardmarket']['prices']['trendPrice'], serie: data['set']['series'], released_date: data['set']["releaseDate"], number: data['number'], rarity: data['rarity'], category: data['types'].first, image: data['images']['small'])
+  card = Card.create!(name: data['name'], price: data['cardmarket']['prices']['trendPrice'], serie: data['set']['series'], extension: data['set']['name'], released_date: data['set']["releaseDate"], number: data['number'], rarity: data['rarity'], category: data['types'].first, image: data['images']['small'])
   puts "#{card['name']}"
 end
 
