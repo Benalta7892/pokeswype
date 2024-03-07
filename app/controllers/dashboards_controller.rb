@@ -6,11 +6,11 @@ class DashboardsController < ApplicationController
     @recent_cards = @user.cards.order(created_at: :desc)
   end
 
-  def collection
-    @user = current_user
-    @cards_collection = @user.cards
-    @total_cards = @user.cards.count
-  end
+  # def collection
+  #   @user = current_user
+  #   @cards_collection = @user.cards
+  #   @total_cards = @user.cards.count
+  # end
 
   def favorites
     @user = current_user
