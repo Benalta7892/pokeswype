@@ -12,13 +12,35 @@
   <h1>My collection - <%= @total_cards %> cards</h1>
 </div>
 
+<%# Pour filtrer et voir seulement les cartes echangeables ou non %>
+<div class="filtre-dashboard">
+  <%= form_with url: user_user_cards_path(current_user), class: "form-filter", method: :get do |form| %>
+    <%= form.check_box :filter, { checked: params[:filter] == 'exchangeable', class: "checkbox" }, 'exchangeable', nil %>
+    <%= form.label :filter, 'Exchangeable Cards', for: 'filter_exchangeable', class: "label-filter" %>
+    <%= form.submit 'Filter', class: "btn-filter" %>
+  <% end %>
+</div>
+
+
+<%# Pour afficher les cartes de l'utilisateur %>
 <div class="display-cards">
   <% @user_cards.each do |user_card|  %>
+    <%# Afficher la carte, lien vers la show au clic %>
     <%= link_to card_path(user_card.card) do %>
       <%= image_tag user_card.card.image, class: "pokemon-cards" %>
     <% end %>
+
+    <%# Pour retirer une carte de la collection %>
     <%= form_with model: [current_user, user_card], url: user_user_card_path(current_user, user_card), method: :delete do |form| %>
       <%= form.submit "Remove" %>
     <% end %>
+
+    <%# Pour rendre une carte échangeable %>
+    <%= form_with model: [current_user, user_card], method: :patch do |form| %>
+      <%= form.check_box :exchangeable %>
+      <%= form.label :exchangeable, 'Cette carte est-elle échangeable ?' %>
+      <%= form.submit %>
+    <% end %>
+
   <% end %>
 </div>

@@ -4,6 +4,7 @@ class UserCardsController < ApplicationController
   def index
     @user = current_user
     @user_cards = @user.user_cards
+    @user_cards = @user_cards.where(exchangeable: true) if params[:filter] == "exchangeable"
   end
 
   def create
@@ -14,6 +15,11 @@ class UserCardsController < ApplicationController
     else
       redirect_to card_path(user_card_params[:card_id]), alert: 'Failed to add the card to your collection.'
     end
+  end
+
+  def update
+    @user_card = current_user.user_cards.find(params[:id])
+    @user_card.update(user_card_params)
   end
 
   def destroy
@@ -29,6 +35,6 @@ class UserCardsController < ApplicationController
   private
 
   def user_card_params
-    params.require(:user_card).permit(:card_id)
+    params.require(:user_card).permit(:card_id, :exchangeable)
   end
 end
