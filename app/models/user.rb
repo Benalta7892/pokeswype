@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :user_cards
+  has_many :user_cards, dependent: :destroy
   has_many :cards, through: :user_cards
   has_many :exchanges_as_dealer, class_name: 'Exchange', foreign_key: 'dealer_id'
   has_many :exchanges_as_receiver, class_name: 'Exchange', foreign_key: 'receiver_id'
