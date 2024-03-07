@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :user_cards, only: [:index]
+    resources :user_cards, only: [:index, :create, :destroy]
     resources :exchanges, only: [:new, :create]
   end
 

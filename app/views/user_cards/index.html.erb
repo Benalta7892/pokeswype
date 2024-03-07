@@ -1,0 +1,24 @@
+<div class="card-profil">
+  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+    <%= image_tag asset_path('back-arraw.png') %>
+  <% end %>
+  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+  <h1><%= @user.first_name %></h1>
+  <p><%= @total_cards %> cards</p>
+  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+</div>
+
+<div class="title-collection">
+  <h1>My collection - <%= @total_cards %> cards</h1>
+</div>
+
+<div class="display-cards">
+  <% @user_cards.each do |user_card|  %>
+    <%= link_to card_path(user_card.card) do %>
+      <%= image_tag user_card.card.image, class: "pokemon-cards" %>
+    <% end %>
+    <%= form_with model: [current_user, user_card], url: user_user_card_path(current_user, user_card), method: :delete do |form| %>
+      <%= form.submit "Remove" %>
+    <% end %>
+  <% end %>
+</div>
