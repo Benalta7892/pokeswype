@@ -25,22 +25,30 @@
 <%# Pour afficher les cartes de l'utilisateur %>
 <div class="display-cards">
   <% @user_cards.each do |user_card|  %>
-    <%# Afficher la carte, lien vers la show au clic %>
-    <%= link_to card_path(user_card.card) do %>
-      <%= image_tag user_card.card.image, class: "pokemon-cards" %>
-    <% end %>
 
-    <%# Pour retirer une carte de la collection %>
-    <%= form_with model: [current_user, user_card], url: user_user_card_path(current_user, user_card), method: :delete do |form| %>
-      <%= form.submit "Remove" %>
-    <% end %>
+    <div class="card-dashboard">
 
-    <%# Pour rendre une carte échangeable %>
-    <%= form_with model: [current_user, user_card], method: :patch do |form| %>
-      <%= form.check_box :exchangeable %>
-      <%= form.label :exchangeable, 'Cette carte est-elle échangeable ?' %>
-      <%= form.submit %>
-    <% end %>
+      <%# Afficher la carte, lien vers la show au clic %>
+      <%= link_to card_path(user_card.card) do %>
+        <%= image_tag user_card.card.image, class: "pokemon-cards" %>
+      <% end %>
+
+      <%# Pour retirer une carte de la collection %>
+      <%= form_with model: [current_user, user_card], url: user_user_card_path(current_user, user_card), method: :delete do |form| %>
+        <%= form.submit "Remove", :onclick => "return confirm('Are you sure ?')", class: "delete-card" %>
+      <% end %>
+
+
+      <%# Pour rendre une carte échangeable %>
+
+      <%= form_with model: [current_user, user_card], class: "form-filter-update", method: :patch do |form| %>
+        <%= form.check_box :exchangeable %>
+        <%= form.label :exchangeable, 'Exchange', class: "label-filter" %>
+        <%= form.submit "Update", class: "update-card" %>
+      <% end %>
+
+    </div>
+
 
   <% end %>
 </div>
