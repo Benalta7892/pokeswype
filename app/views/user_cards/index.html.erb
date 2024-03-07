@@ -39,7 +39,8 @@
       <% end %>
 
 
-      <%# Pour rendre une carte échangeable %>
+
+      <%# Pour cocher une carte comme échangeable %>
 
       <%= form_with model: [current_user, user_card], class: "form-filter-update", method: :patch do |form| %>
         <%= form.check_box :exchangeable %>
