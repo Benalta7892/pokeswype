@@ -51,9 +51,19 @@
   justify-content: center;
 }
 
-.avatar {
+.avatar-dashboard {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-top: 20px;
+}
+.arrow {
+  background-image: asset-url("back-arrow.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
 }

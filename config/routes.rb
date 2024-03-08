@@ -29,7 +29,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :user_cards, only: [:index]
+    resources :user_cards, only: [:index, :create, :update, :destroy]
     resources :exchanges, only: [:new, :create]
+  end
+
+  resources :chatrooms, only: [:show] do
+    resources :messages, only: [:create]
   end
 end

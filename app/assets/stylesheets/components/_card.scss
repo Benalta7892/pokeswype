@@ -191,4 +191,55 @@
       box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.8);
     }
   }
+
+  .card-dashboard {
+    margin-top: 50px;
+    position: relative;
+    font-family: 'Pixelify Sans', sans-serif;
+
+    .form-filter-update {
+      margin: 8px;
+      padding-left: 12px;
+      align-items: center;
+    }
+
+
+    .delete-card {
+      position: absolute;
+      top: -14px;
+      right: -2px;
+    }
+  }
+
+
+}
+
+.card-show {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  img {
+    margin-top: 100px;
+    justify-self: center;
+    width: 350px;
+    z-index: 6;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+}
+.card-profil-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  border: 1px solid #88B3C4;
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 10%, rgba(46,147,174,0.7637429971988796) 48%);
+  margin: 8px;
+  position: relative;
+  margin-bottom: 32px;
+  width: 350px;
+  border-radius: 8px;
 }

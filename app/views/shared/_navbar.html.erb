@@ -2,7 +2,7 @@
   <div class="container-fluid">
             <%= link_to image_tag("collection.png"), "#", class: "nav-link" %>
             <%= link_to image_tag("Search.png"), "#", data:{bs_toggle:"modal", bs_target:"#searchModal"} %>
-            <%= link_to image_tag("pokeballnavbar.png"), "#", class: "pokeball" %>
+            <%= link_to image_tag("pokeballnavbar.png"), root_path, class: "pokeball" %>
             <%= link_to image_tag("Envelope.png"), "#", class: "messages" %>
             <%# <% if user_signed_in? %>
               <%# <%=  link_to image_tag(current_user.photo.url), dashboard_path %>
@@ -12,6 +12,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
   <div class="modal-dialog">
