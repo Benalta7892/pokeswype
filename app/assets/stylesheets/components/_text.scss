@@ -130,8 +130,40 @@ a {
   text-decoration: none;
   text-align: left;
   list-style: none;
-  margin: 16px;
+  font-size: 24px;
+  margin-top: 8px;
+  margin-bottom: 16px;
   padding: 0px;
-  color: #19466e;
+  color: #3E2121;
+  .p {
+    margin: 12px;
+    font-size: 26px;
+  }
+}
+.text-ul-show {
+  font-family: 'Pixelify Sans', sans-serif;
+  text-decoration: none;
+  text-align: left;
+  list-style: none;
   font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding: 16pxpx;
+  color:  #19466e;
+}
+
+.a-home {
+  a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.title-home {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 16px;
 }
