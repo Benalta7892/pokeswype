@@ -2,7 +2,7 @@
   <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
     <%= image_tag asset_path('back-arraw.png') %>
   <% end %>
-  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar" %>
+  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
   <h1><%= @user.first_name %></h1>
   <p><%= @total_cards %> cards</p>
   <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
@@ -19,7 +19,7 @@
   </div>
 <% end %>
 
-<%= link_to collection_dashboards_path do %>
+<%= link_to user_user_cards_path(current_user) do %>
   <div class="onglet-profil-large2">
     <h2>My collection</h2>
     <div class="litle-slide">

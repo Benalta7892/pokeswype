@@ -191,6 +191,27 @@
       box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.8);
     }
   }
+
+  .card-dashboard {
+    margin-top: 50px;
+    position: relative;
+    font-family: 'Pixelify Sans', sans-serif;
+
+    .form-filter-update {
+      margin: 8px;
+      padding-left: 12px;
+      align-items: center;
+    }
+
+
+    .delete-card {
+      position: absolute;
+      top: -14px;
+      right: -2px;
+    }
+  }
+
+
 }
 
 .card-show {
