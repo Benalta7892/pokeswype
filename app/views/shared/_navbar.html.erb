@@ -6,12 +6,13 @@
             <%= link_to image_tag("Envelope.png"), "#", class: "messages" %>
             <%# <% if user_signed_in? %>
               <%# <%=  link_to image_tag(current_user.photo.url), dashboard_path %>
-              <%# <% else %>
-              <%= link_to image_tag("User.png"), dashboard_path, class: "nav-link" %>
-              <%# <% end %>
+            <%# <% else %>
+            <%= link_to image_tag("User.png"), "new_user_session_path", class: "nav-link" %>
+            <%# <% end %>
     </div>
   </div>
 </div>
+
 
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -29,7 +30,7 @@
             %>
         </div>
         <div class="modal-footer">
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <h1><%= submit_tag "Search", name: "", class: "btn btn-primary" %><h1>
         </div>
       </div>
     <% end %>
