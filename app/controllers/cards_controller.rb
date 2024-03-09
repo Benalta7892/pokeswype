@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:show]
+  before_action :set_card, only: [:show, :collectors]
   skip_before_action :authenticate_user!, only: [:search, :index, :show]
 
   def search
@@ -14,6 +14,10 @@ class CardsController < ApplicationController
   end
 
   def show
+  end
+
+  def collectors
+    @collectors = @card.ready_for_exchange_collectors
   end
 
   private

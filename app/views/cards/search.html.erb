@@ -9,7 +9,7 @@ http://localhost:3000/cards/search?query=pikatchu %>
     <div class="a-home">
       <% if @cards.any? %>
         <% @cards.each do |card| %>
-          <%= link_to card_path(card) do %>
+          <%= link_to collectors_card_path(card) do %>
             <%= image_tag(card.image) %>
             <p><%= card.ready_for_exchange_collectors.count %>are ready for an exchange</p>
           <% end %>
