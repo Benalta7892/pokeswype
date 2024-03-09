@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <% @collectors.each do |collector| %>
+      <div class="card-collectors">
+        <%= link_to collection_user_path(collector) do %>
+        <%= image_tag collector.avatar, class: "avatar-dashboard" %>
+        <div class="card-collectors-infos">
+          <h2><%= collector.first_name %></h2>
+          <p><%= collector.email %></p>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
