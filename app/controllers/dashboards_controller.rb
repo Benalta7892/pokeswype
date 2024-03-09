@@ -22,6 +22,7 @@ class DashboardsController < ApplicationController
 
   def exchangeable_cards
     @user = current_user
+    @exchangeable_cards = @user.user_cards.where(exchangeable: true)
   end
 
   def current_exchanges
