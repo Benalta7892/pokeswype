@@ -11,9 +11,11 @@
         <li>Rarity: <%= @card.rarity %></li>
         <li>Card Number: <%= @card.number %> </li>
         <li>Trend: <%= @card.price %> Euros </li>
+        <% if user_signed_in? %>
         <%= form_with model: [current_user, current_user.user_cards.build], url: user_user_cards_path(current_user), method: :post do |form| %>
           <%= form.hidden_field :card_id, value: @card.id %>
-          <%= form.submit 'Ajouter à ma collection', class: "btn btn-primary" %>
+          <%= form.submit 'Add to my collection', class: "btn btn-primary" %>
+          <% end %>
         <% end %>
 
 
