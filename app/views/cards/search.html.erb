@@ -6,9 +6,11 @@ http://localhost:3000/cards/search?query=pikatchu %>
     <div class="col-sm-8">
       <div>
         <% if @cards.any? %>
-          <% @cards.each do |card| %>
-            <h4><%= link_to image_tag(card.image), class: "cards-pokemon" %></h4>
-          <% end %>
+        <% @cards.each do |card| %>
+      <%= link_to card_path(card) do %>
+      <%= image_tag(card.image, class: "cards-pokemon") %>
+      <% end %>
+      <% end %>
         <% else %>
           <em>Sorry, no cards found.</em>
         <% end %>

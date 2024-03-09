@@ -16,6 +16,12 @@ class CardsController < ApplicationController
   def show
   end
 
+  def collectors
+    # afficher la carte
+    # trouver les collectionneurs qui ono la meme carte exangeable true
+    # afficher tous les collectionneurs
+  end
+
   private
 
   def card_params
