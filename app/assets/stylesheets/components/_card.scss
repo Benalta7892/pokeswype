@@ -243,3 +243,18 @@
   width: 350px;
   border-radius: 8px;
 }
+.card-profil-search {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  img {
+    margin-top: 100px;
+    justify-self: center;
+    width: 350px;
+    z-index: 6;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+}
