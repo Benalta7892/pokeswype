@@ -1,0 +1,33 @@
+.filtre-dashboard {
+  display: flex;
+  margin: 8px;
+  height: 52px;
+  width: 90%;
+  font-family: "Pixelify Sans", sans-serif;
+  align-items: center;
+
+  .form-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    height: 52px;
+    width: 100%;
+    font-size: 22px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .checkbox {
+    height: 24px;
+    width: 24px;
+  }
+
+  .btn-filter {
+    text-align: center;
+  }
+
+  .label-filter {
+    font-size: 25px;
+  }
+}
