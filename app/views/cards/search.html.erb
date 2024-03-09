@@ -2,13 +2,20 @@
 http://localhost:3000/cards/search?query=pikatchu %>
 
 <div class="container-search">
+  <%= link_to root_path, class: "arrow" do %>
+    <%= image_tag asset_path('back-arrow.png') %>
+  <% end %>
   <div class="card-profil-search">
-    <div class="a-home"><% if @cards.any? %>
-      <% @cards.each do |card| %>
-      <%= link_to image_tag(card.image) %>
+    <div class="a-home">
+      <% if @cards.any? %>
+        <% @cards.each do |card| %>
+          <%= link_to card_path(card) do %>
+            <%= image_tag(card.image) %>
+            <p><%= card.ready_for_exchange_collectors.count %>are ready for an exchange</p>
           <% end %>
-          <% else %>
-      <em>Sorry, no cards found.</em>
+        <% end %>
+      <% else %>
+        <em>Sorry, no cards found.</em>
       <% end %>
     </div>
   </div>
