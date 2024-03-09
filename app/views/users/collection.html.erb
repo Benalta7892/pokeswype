@@ -1,0 +1,21 @@
+<div class="card-profil">
+  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+    <%= image_tag asset_path('back-arraw.png') %>
+  <% end %>
+  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+  <h1><%= @user.first_name %></h1>
+  <p><%= @total_cards %> cards</p>
+  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+</div>
+
+<div class="title-exchangeable-cards">
+  <h1>My exchangeable cards</h1>
+</div>
+
+<div>
+<% @exchangeable_cards.each do |user_card| %>
+  <%= link_to card_path(user_card.card) do %>
+    <%= image_tag user_card.card.image, class: "pokemon-cards" %>
+  <% end %>
+<% end %>
+</div>
