@@ -28,11 +28,19 @@ cards['data'].first(100).each do |data|
   puts "#{card['name']}"
 end
 
-puts "Creating user_cards for John..."
+puts "Creating user_cards ..."
+
+UserCard.create!(user: remy, card: Card.first, exchangeable: true)
+UserCard.create!(user: remy, card: Card.second, exchangeable: true)
+UserCard.create!(user: remy, card: Card.fourth, exchangeable: true)
+
+UserCard.create!(user: sacha, card: Card.first, exchangeable: true)
+UserCard.create!(user: sacha, card: Card.third, exchangeable: false)
+UserCard.create!(user: sacha, card: Card.fourth, exchangeable: true)
 
 UserCard.create!(user: john, card: Card.first, exchangeable: true)
 UserCard.create!(user: john, card: Card.second, exchangeable: true)
 UserCard.create!(user: john, card: Card.third, exchangeable: false)
-UserCard.create!(user: john, card: Card.fourth, exchangeable: true)
+
 
 puts "Finished!"
