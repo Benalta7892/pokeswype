@@ -1,6 +1,7 @@
 <%# déplacer le formulaire de recherche dans le layout modal navbar
 http://localhost:3000/cards/search?query=pikatchu %>
 
+<<<<<<< HEAD
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-8">
@@ -13,8 +14,24 @@ http://localhost:3000/cards/search?query=pikatchu %>
       <% end %>
         <% else %>
           <em>Sorry, no cards found.</em>
+=======
+<div class="container-search">
+  <%= link_to root_path, class: "arrow" do %>
+    <%= image_tag asset_path('back-arrow.png') %>
+  <% end %>
+  <div class="card-profil-search">
+    <div class="a-home">
+      <% if @cards.any? %>
+        <% @cards.each do |card| %>
+          <%= link_to card_path(card) do %>
+            <%= image_tag(card.image) %>
+            <p><%= card.ready_for_exchange_collectors.count %>are ready for an exchange</p>
+          <% end %>
+>>>>>>> 612f11370ab6bdad0f22b49fc866821ef7b8deb8
         <% end %>
-      </div>
+      <% else %>
+        <em>Sorry, no cards found.</em>
+      <% end %>
     </div>
   </div>
 </div>
