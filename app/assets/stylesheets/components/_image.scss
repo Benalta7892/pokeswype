@@ -12,16 +12,16 @@
   z-index: 3;
   position: relative;
 }
-.icon-star {
-  background-image: asset-url("icon-star.png");
-  position: absolute;
-  background-repeat: no-repeat;
-  top: 140px;
-  right: 0px;
-  width: 110px;
-  height: 90px;
-  z-index: 2;
-}
+// .icon-star {
+//   background-image: asset-url("icon-star.png");
+//   position: absolute;
+//   background-repeat: no-repeat;
+//   top: 140px;
+//   right: 0px;
+//   width: 110px;
+//   height: 90px;
+//   z-index: 1;
+// }
 .pokeball-1 {
   background-image: asset-url("pokeball-1.png");
   position: absolute;
@@ -82,4 +82,21 @@
   margin-right: 0px;
   margin-bottom: 0px;
   z-index: 5;
+}
+.favoris input[type="submit"] {
+  background-color: transparent;
+  background-image: asset-url("favoris.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  position: absolute;
+  top: 125px;
+  right: 45px;
+  height: 60px;
+  width: 100px;
+  margin: 8px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  z-index: 10;
+  border: none;
 }
