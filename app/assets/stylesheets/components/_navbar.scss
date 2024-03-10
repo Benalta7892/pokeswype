@@ -37,16 +37,22 @@
 .pokeball {
   width: 95px;
   position: absolute;
-  right: 160px;
+  left: 40%;
+  right: 40%;
   top: -26px;
-  scale: 1.15;
+  // scale: 1.15;
 }
 
 .messages {
-  padding-left: 110px;
+  // padding-left: 110px;
 }
 .container-fluid {
+  width: 100%;
   max-width: 430px;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .modal-content {

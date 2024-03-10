@@ -3,6 +3,13 @@
     <%= image_tag asset_path('back-arrow.png') %>
   <% end %></div>
   <div class="card-show"><%= link_to image_tag(@card.image), class: "cards-pokemon" %>
+    <div class="favoris"><% if user_signed_in? %>
+        <%= form_with model: [current_user, current_user.user_cards.build], url: user_user_cards_path(current_user), method: :post do |form| %>
+          <%= form.hidden_field :card_id, value: @card.id %>
+          <%= form.submit ''%>
+          <% end %>
+        <% end %>
+  </div>
   <div class="card-profil-show">
       <ul class="text-ul-show">
         <li>Name: <%= @card.name %></li>
@@ -11,14 +18,6 @@
         <li>Rarity: <%= @card.rarity %></li>
         <li>Card Number: <%= @card.number %> </li>
         <li>Trend: <%= @card.price %> Euros </li>
-        <% if user_signed_in? %>
-        <%= form_with model: [current_user, current_user.user_cards.build], url: user_user_cards_path(current_user), method: :post do |form| %>
-          <%= form.hidden_field :card_id, value: @card.id %>
-          <%= form.submit 'Add to my collection', class: "btn btn-primary" %>
-          <% end %>
-        <% end %>
-
-
       </ul>
   </div>
   </div>
