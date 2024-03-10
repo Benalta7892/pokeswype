@@ -11,7 +11,7 @@ http://localhost:3000/cards/search?query=pikatchu %>
         <% @cards.each do |card| %>
           <%= link_to collectors_card_path(card) do %>
             <%= image_tag(card.image) %>
-            <p><%= card.ready_for_exchange_collectors.count %>are ready for an exchange</p>
+            <h2><%= card.ready_for_exchange_collectors.count %> ready for an exchange</h2>
           <% end %>
         <% end %>
       <% else %>
