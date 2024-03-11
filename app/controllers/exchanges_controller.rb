@@ -1,6 +1,10 @@
 class ExchangesController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    @exchange = Exchange.find(params[:id])
+  end
+
   def create
     @exchange = Exchange.new(exchange_params)
     @exchange.dealer = current_user
