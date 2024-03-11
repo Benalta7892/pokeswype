@@ -42,4 +42,6 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
   end
+
+  resources :card_interests, only: [:create]
 end
