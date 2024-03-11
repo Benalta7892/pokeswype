@@ -275,16 +275,19 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: auto;
 }
 
 .card-collectors img {
-  height: 100%;
-  width: 120px;
+  margin: auto;
+  width: 100px;
   object-fit: cover;
 }
 
 .card-collectors h2 {
-  font-size: 16px;
+  font-size: 12px;
+  text-align: left;
   font-weight: bold;
   margin: 0;
 }
@@ -293,10 +296,13 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
+  text-align: left;
   margin-bottom: 0;
   margin-top: 8px;
 }
 
 .card-collectors .card-collectors-infos {
   padding: 16px;
+  text-align: left;
+  margin: auto;
 }
