@@ -1,15 +1,16 @@
 .pikachu-logo {
   background-image: asset-url("pikachu-logo.png");
   background-repeat: no-repeat;
-  background-size: fill;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 24px;
   width: 100%;
-  height: 300px;
+  height: 250px;
   z-index: 3;
   position: relative;
+  // filter: contrast(100%);
 }
 // .icon-star {
 //   background-image: asset-url("icon-star.png");
@@ -52,6 +53,7 @@
   gap: 16px;
   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .avatar-dashboard {
@@ -89,13 +91,21 @@
   background-size: cover;
   align-items: center;
   position: absolute;
-  top: 125px;
-  right: 45px;
-  height: 60px;
-  width: 100px;
+  top: 80px;
+  right: -15px;
+  height: 70px;
+  width: 120px;
   margin: 8px;
   margin-right: 0px;
   margin-bottom: 0px;
   z-index: 10;
   border: none;
+}
+.nav-link img{
+  width: 40px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+
 }

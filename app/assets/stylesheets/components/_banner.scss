@@ -1,5 +1,7 @@
 body {
-  background: rgb(36,142,172);
+  background:rgb(36,142,172);
+
+  // #1EA4DD
   background: linear-gradient(180deg, rgba(36,142,172,1) 00%, rgba(255,255,255,1) 100%);
   background-repeat: no-repeat;
   height: 100vh;
@@ -21,3 +23,7 @@ body {
   flex-direction: column;
   background: scroll;
 }
+.container-home {
+  height: calc(100vh - 100px);
+}
+

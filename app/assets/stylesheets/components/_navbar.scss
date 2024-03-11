@@ -13,7 +13,9 @@
   margin-top: 0;
   font-size: 30px;
   background: #abd4df !important;
+  // background: white !important;
   padding: 6px;
+  padding-bottom: 60px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -35,26 +37,36 @@
 // }
 
 .pokeball {
-  width: 95px;
+  width: 100px;
   position: absolute;
-  left: 40%;
+  left: 38%;
   right: 40%;
-  top: -26px;
-  // scale: 1.15;
-}
+  top: -16px;
 
-.messages {
-  // padding-left: 110px;
 }
 .container-fluid {
   width: 100%;
   max-width: 430px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 16px;
   padding-right: 16px;
+  margin-bottom: 8px;
+  .img {
+    max-width: 40px !important;
+  }
 }
-
+.avatar-navbar img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+}
 .modal-content {
   background-color: #88B3C4;
   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
@@ -63,4 +75,7 @@
 
 .btn-primary {
   background-color: #19466e !important;
+}
+.navbar-pokeball {
+  width: 70px;
 }
