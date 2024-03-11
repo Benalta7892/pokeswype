@@ -4,11 +4,12 @@ class ExchangesController < ApplicationController
   def create
     @exchange = Exchange.new(exchange_params)
     @exchange.dealer = current_user
-
+    raise
     if @exchange.save
-      redirect_to exchange_path(@exchange), alert: "Exchange created!"
+      CardInterest.create(user: @exchange.receiver, card: @exchange.dealer_card, exchange: @exchange)
+      redirect_to exchange_path(@exchange)
     else
-      render :new, alert: "Something went wrong!"
+      render :new
     end
   end
 

@@ -1,25 +1,14 @@
 class CardInterestsController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @card_interest = CardInterest.new
-    @card = Card.find(params[:card_id])
-  end
-
   def create
-    @card_interest = CardInterest.new(card_interest_params)
-    @card_interest.user = current_user
-    @card_interest.card = Card.find(params[:card_id])
-    if @card_interest.save
-      redirect_to card_path(@card_interest.card), alert: "Card added to your collection!"
-    else
-      render :new, alert: "Something went wrong!"
+    @cards = Card.where(id: params[:card_interest_ids])
+
+
+    @exchange = Exchange.create(dealer: current_user, receiver_id: params[:user_id].to_i)
+    @cards.each do |card|
+      CardInterest.create(user: current_user, card: card, exchange: @exchange)
     end
-  end
-
-  private
-
-  def card_interest_params
-    params.require(:card_interest).permit(:user_id, :card_id, :exchangeable)
+    redirect_to exchange_path(@exchange)
   end
 end
