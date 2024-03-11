@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :user_cards, only: [:index, :create, :update, :destroy]
     resources :exchanges, only: [:new, :create]
+    resources :card_interests, only: [:create]
     member do
       get "collection"
     end

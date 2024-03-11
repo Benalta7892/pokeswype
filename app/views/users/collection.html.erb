@@ -12,10 +12,17 @@
   <h1>My exchangeable cards</h1>
 </div>
 
-<div>
-<% @exchangeable_cards.each do |user_card| %>
-  <%= link_to card_path(user_card.card) do %>
-    <%= image_tag user_card.card.image, class: "pokemon-cards" %>
-  <% end %>
+<%= form_with url: user_card_interests_path(@user.id), method: :post, class: "form-filter-update" do |form| %>
+  <div>
+    <% @exchangeable_cards.each do |user_card| %>
+      <%= link_to card_path(user_card.card) do %>
+        <%= image_tag user_card.card.image, class: "pokemon-cards" %>
+      <% end %>
+
+      <%= form.check_box "card_interest_ids[]", {},user_card.card.id, nil %>
+      <%= form.label "card_interest_#{user_card.id}", 'Select', class: "label-filter" %>
+    <% end %>
+  </div>
+
+  <%= form.submit "Validate choice", class: "update-card" %>
 <% end %>
-</div>
