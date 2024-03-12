@@ -3,6 +3,8 @@ require "open-uri"
 
 puts "Destroying all data..."
 
+CardInterest.destroy_all
+Exchange.destroy_all
 UserCard.destroy_all
 User.destroy_all
 Card.destroy_all

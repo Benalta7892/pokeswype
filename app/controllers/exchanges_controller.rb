@@ -3,6 +3,7 @@ class ExchangesController < ApplicationController
 
   def show
     @exchange = Exchange.find(params[:id])
+    @exchange_cards = @exchange.card_interests
   end
 
   def create

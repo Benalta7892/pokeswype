@@ -1,1 +1,36 @@
-<h1>PeRRine c'est ton moment</h1>
+<div style="padding-bottom: 150px;
+            margin-top: 100px;">
+  <%= link_to root_path, class: "arrow" do %>
+      <%= image_tag asset_path('back-arrow.png') %>
+  <% end %>
+  <div class="container-show-exchange">
+
+    <h2>Échange proposé par <%= @exchange.dealer.first_name %></h2>
+    <div class="card-product">
+        <%@exchange_cards.each do |card_interest|%>
+          <%=image_tag (card_interest.card.image) %>
+          <div class="card-product-infos">
+            <p><%= card_interest.card.name %></p>
+            <p><%= card_interest.card.price %> Euros</p>
+            <p><%= card_interest.card.rarity %></p>
+          <% end %>
+      </div>
+    </div>
+    <h2>Échange proposé par <%= @exchange.receiver.first_name %></h2>
+          <% if @exchange.receiver.card_interests.present? %>
+      <div>
+        <div class="card-product">
+          <% @exchange.receiver.card_interests.each do |card_interest| %>
+          <%= image_tag(card_interest.card.image) %>
+          <div class="card-product-infos">
+            <p><span><%= card_interest.card.name %></span></p>
+            <p><%= card_interest.card.price %> Euros</p>
+            <p><%= card_interest.card.rarity %></p>
+          <% end %>
+          </div>
+          <% else %>
+          <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
+          collection_user_path(@exchange.dealer) %>
+      <% end %>
+  </div>
+</div>
