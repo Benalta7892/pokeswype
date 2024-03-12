@@ -1,28 +1,33 @@
-<div class="card-profil">
-  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
-    <%= image_tag asset_path('back-arraw.png') %>
-  <% end %>
-  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
-  <h1><%= @user.first_name %></h1>
-  <p><%= @total_cards %> cards</p>
-  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
-</div>
-
-<div class="title-exchangeable-cards">
-  <h1>My exchangeable cards</h1>
-</div>
-
-<%= form_with url: user_card_interests_path(@user.id), method: :post, class: "form-filter-update" do |form| %>
-  <div>
-    <% @exchangeable_cards.each do |user_card| %>
-      <%= link_to card_path(user_card.card) do %>
-        <%= image_tag user_card.card.image, class: "pokemon-cards" %>
-      <% end %>
-
-      <%= form.check_box "card_interest_ids[]", {},user_card.card.id, nil %>
-      <%= form.label "card_interest_#{user_card.id}", 'Select', class: "label-filter" %>
+<div style="padding-bottom: 100px;">
+  <div class="container">
+  <div class="card-profil">
+    <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+      <%= image_tag asset_path('back-arraw.png') %>
     <% end %>
+    <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+    <h1><%= @user.first_name %></h1>
+    <p><%= @total_cards %> cards</p>
+    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
   </div>
 
-  <%= form.submit "Validate choice", class: "update-card" %>
-<% end %>
+  <div class="title-exchangeable-cards">
+    <h1>My exchangeable cards</h1>
+  </div>
+  <div class="display-cards-collection">
+    <div class="card-dashboard">
+  <%= form_with url: user_card_interests_path(@user.id), method: :post, class: "form-filter-update" do |form| %>
+
+      <% @exchangeable_cards.each do |user_card| %>
+        <%= link_to card_path(user_card.card) do %>
+          <%= image_tag user_card.card.image, class: "pokemon-cards" %>
+        <% end %>
+
+        <%= form.check_box "card_interest_ids[]", {},user_card.card.id, nil %>
+        <%= form.label "card_interest_#{user_card.id}", 'Select', class: "label-filter" %>
+      <% end %>
+      <%= form.submit "Validate choice", class: "update-card" %>
+    <% end %>
+      </div>
+    </div>
+  </div>
+</div>

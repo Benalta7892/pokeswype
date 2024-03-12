@@ -1,1 +1,8 @@
-<h1>PeRRine c'est ton moment</h1>
+<div style="padding-bottom: 150px;">
+  <div class="container-show_exchange">
+    <div><%@exchange_cards.each do |card_interest|%>
+          <%=image_tag (card_interest.card.image) %>
+          <% end %>
+    </div>
+  </div>
+</div>

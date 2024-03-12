@@ -90,7 +90,6 @@
   }
 }
 
-
 .onglet-profil {
   display: flex;
   flex-direction: column;
@@ -305,4 +304,39 @@
   padding: 16px;
   text-align: left;
   margin: auto;
+}
+
+.display-cards-collection {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin: 8px;
+
+  .pokemon-cards {
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.5);
+    margin: 8px;
+    height: 258px;
+
+    &pokemon-card:hover {
+      box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.8);
+    }
+  }
+
+  .card-dashboard {
+    // margin-top: 50px;
+    position: relative;
+    font-family: 'Pixelify Sans', sans-serif;
+
+    .form-filter-update {
+      margin: 8px;
+      padding-left: 12px;
+      align-items: center;
+    }
+    .delete-card {
+      position: absolute;
+      top: -14px;
+      right: -2px;
+    }
+  }
 }
