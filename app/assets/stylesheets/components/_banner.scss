@@ -23,6 +23,16 @@ body {
   flex-direction: column;
   background: scroll;
 }
-// .container {
-//   display: flex;
-// }
+.container-show-exchange {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: scroll;
+  h2 {
+    margin-top: 60px;
+    margin-bottom: 16px;
+  }
+}
