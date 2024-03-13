@@ -5,7 +5,7 @@
   <% end %>
   <div class="container-show-exchange">
 
-    <h2>Échange proposé par <%= @exchange.dealer.first_name %></h2>
+    <h2>Exchange proposed by <%= @exchange.dealer.first_name %></h2>
     <div class="card-product">
         <%@exchange_cards.each do |card_interest|%>
           <%=image_tag (card_interest.card.image) %>
@@ -16,7 +16,7 @@
           <% end %>
       </div>
     </div>
-    <h2>Échange proposé par <%= @exchange.receiver.first_name %></h2>
+    <h2>Exchange proposed by <%= @exchange.receiver.first_name %></h2>
           <% if @exchange.receiver.card_interests.present? %>
       <div>
         <div class="card-product">
@@ -33,4 +33,5 @@
           collection_user_path(@exchange.dealer) %>
       <% end %>
   </div>
+</div>
 </div>
