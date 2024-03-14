@@ -7,7 +7,7 @@
 
     <h2>Échange proposé par <%= @exchange.dealer.first_name %></h2>
     <div class="card-product">
-        <%@exchange_cards.each do |card_interest|%>
+        <%@exchange.cards_as_dealer.each do |card_interest|%>
           <%=image_tag (card_interest.card.image) %>
           <div class="card-product-infos">
             <p><%= card_interest.card.name %></p>
@@ -17,10 +17,10 @@
       </div>
     </div>
     <h2>Échange proposé par <%= @exchange.receiver.first_name %></h2>
-          <% if @exchange.receiver.card_interests.present? %>
+          <% if @exchange.cards_as_receiver.any? %>
       <div>
         <div class="card-product">
-          <% @exchange.receiver.card_interests.each do |card_interest| %>
+          <% @exchange.cards_as_receiver.each do |card_interest| %>
           <%= image_tag(card_interest.card.image) %>
           <div class="card-product-infos">
             <p><span><%= card_interest.card.name %></span></p>
@@ -30,7 +30,7 @@
           </div>
           <% else %>
           <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
-          collection_user_path(@exchange.dealer) %>
+          collection_user_path(@exchange.dealer, exchange_id: @exchange.id) %>
       <% end %>
   </div>
 </div>
