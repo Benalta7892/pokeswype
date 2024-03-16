@@ -1,25 +1,21 @@
-<%# déplacer le formulaire de recherche dans le layout modal navbar
-http://localhost:3000/cards/search?query=pikatchu %>
 
-
-  <div class="container-search">
+  <div class="container-search" data-controller="swipe">
     <%= link_to root_path, class: "arrow" do %>
       <%= image_tag asset_path('back-arrow.png') %>
     <% end %>
-    <div class="card-profil-search">
-      <div class="a-home">
+    <%# <div class="card-profil-search"> %>
+      <div class="a-home" data-swipe-target="card">
         <% if @cards.any? %>
           <% @cards.each do |card| %>
-            <%= link_to card.ready_for_exchange_collectors.count > 0 ? collectors_card_path(card) :  card_path(card) do  %>
-              <%= image_tag(card.image) %>
-              <h2><%= card.ready_for_exchange_collectors.count %> ready for an exchange</h2>
-            <% end %>
+              <div class="card-profil-search" data-card-id="<% card.id %>">
+                <%= image_tag(card.image) %>
+              </div>
+              <!-- <%# <h2><%= card.ready_for_exchange_collectors.count %> ready for an exchange</h2> %> -->
           <% end %>
         <% else %>
           <h1><em>Sorry, no cards found.</em><h1>
         <% end %>
         <div style="margin-bottom: 100px;">
       </div>
-    </div>
   </div>
 </div>

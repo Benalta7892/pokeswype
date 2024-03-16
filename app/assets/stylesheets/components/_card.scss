@@ -9,6 +9,7 @@
   margin: 8px;
   position: relative;
   margin-bottom: 32px;
+  cursor:pointer;
 
   .enveloppe {
     position: absolute;
@@ -242,30 +243,49 @@
   width: 350px;
   border-radius: 8px;
 }
+
+
+
+
+
 .card-profil-search {
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  img {
-    margin-top: 24px;
-    justify-self: center;
-    width: 100%;
-    z-index: 6;
-    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
-    border-radius: 8px;
-  }
-  a {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  h2 {
-    font-size: 24px;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: rotate(-10deg) translateX(5px) translateY(-5px);
   }
 }
+
+
+  // margin-top: 16px;
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  // align-items: center;
+  // img {
+  //   margin-top: 24px;
+  //   justify-self: center;
+  //   width: 100%;
+  //   z-index: 6;
+  //   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  //   border-radius: 8px;
+  // }
+  // a {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   align-items: center;
+  // }
+  // h2 {
+  //   font-size: 24px;
+  // }
+// }
 
 .card-collectors {
   overflow: hidden;
