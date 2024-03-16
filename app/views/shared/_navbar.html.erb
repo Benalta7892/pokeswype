@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-            <%= link_to image_tag("collection.png"), current_exchanges_dashboards_path, class: "nav-link" %>
-            <%= link_to image_tag("home.png"), root_path, class: "nav-link" %>
-            <div class="navbar-pokeball"><%= link_to image_tag("pokeballnavbar.png"), "#",data:{bs_toggle:"modal", bs_target:"#searchModal"}, class: "pokeball" %></div>
-            <%= link_to image_tag("Envelope.png"), cards_path, class: "nav-link" %>
+            <%= link_to image_tag("shop.png"), current_exchanges_dashboards_path, class: "nav-link" %>
+            <%= link_to image_tag("home2.png"), root_path, class: "nav-link" %>
+            <div class="navbar-pokeball"><%= link_to image_tag("pokeball-navbar.png"), "#",data:{bs_toggle:"modal", bs_target:"#searchModal"}, class: "pokeball" %></div>
+            <%= link_to image_tag("email2.png"), "#", class: "nav-link" %>
             <% if user_signed_in? %>
               <%=  link_to image_tag(current_user.avatar), dashboard_path, class: "avatar-navbar" %>
             <% else %>
