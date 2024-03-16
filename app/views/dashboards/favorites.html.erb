@@ -11,3 +11,11 @@
 <div class="title-favorite-cards">
   <h1>My favorites cards</h1>
 </div>
+
+
+
+  <% @favorite_cards.each do |user_card| %>
+      <%= link_to card_path(user_card.card) do %>
+        <%= image_tag user_card.card.image %>
+      <% end %>
+  <% end %>

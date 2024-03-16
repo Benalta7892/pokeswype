@@ -14,6 +14,7 @@ class DashboardsController < ApplicationController
 
   def favorites
     @user = current_user
+    @favorite_cards = @user.user_cards.where(favorite: true)
   end
 
   def wish_list
