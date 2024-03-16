@@ -5,7 +5,12 @@ class UserCardsController < ApplicationController
   def index
     @user = current_user
     @user_cards = @user.user_cards
-    @user_cards = @user_cards.where(exchangeable: true) if params[:filter] == "exchangeable"
+
+    if params[:filter] == "exchangeable"
+      @user_cards = @user_cards.where(exchangeable: true)
+    elsif params[:filter] == "favorite"
+      @user_cards = @user_cards.where(favorite: true)
+    end
   end
 
   def create
@@ -36,6 +41,6 @@ class UserCardsController < ApplicationController
   private
 
   def user_card_params
-    params.require(:user_card).permit(:card_id, :exchangeable)
+    params.require(:user_card).permit(:card_id, :exchangeable, :favorite)
   end
 end
