@@ -9,5 +9,22 @@
 </div>
 
 <div class="title-current-exchanges">
-  <h1>Current exchanges</h1>
+  <h1>Current exchanges a dealer</h1>
+</div>
+
+<div>
+<% @user_exchanges_as_dealer.each do |exchange| %>
+<%= link_to exchange_path(exchange) do %>
+  <%= exchange.status %>
+  <% end %>
+  <% end %>
+</div>
+
+<div>
+  <h1>current exhanges as receivers</h1>
+  <% @user_exchanges_as_receiver.each do |exchange| %>
+  <%= link_to exchange_path(exchange) do %>
+    <%= exchange.status %>
+  <% end %>
+  <% end %>
 </div>

@@ -27,5 +27,7 @@ class DashboardsController < ApplicationController
 
   def current_exchanges
     @user = current_user
+    @user_exchanges_as_dealer = @user.exchanges_as_dealer.where.not(status: "finished")
+    @user_exchanges_as_receiver = @user.exchanges_as_receiver.where.not(status: "finished")
   end
 end
