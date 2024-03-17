@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import  Hammer  from "hammerjs";
 
-// Connects to data-controller="swipe"
+
 export default class extends Controller {
   static targets = ["card", "cardStack"]
 
@@ -10,36 +10,46 @@ export default class extends Controller {
     this.generateCardStacksHTML()
     const card = this.cardTarget;
     const hammer = new Hammer(card);
-    hammer.on("panleft", this.actionLeftSwipe)
-    hammer.on("panright", this.actionRightSwipe)
+    hammer.on("panleft", this.actionLeftSwipe.bind(this))
+    hammer.on("panright", this.actionRightSwipe.bind(this))
   }
 
   actionLeftSwipe(event) {
-    // console.log(event)
-    // event.currentTarget.dataset # ici tu auras certainement le card-id
+    // event.currentTarget.dataset # ici tu auras certainement le card-id le mettre dans uen variable
+    const card = this.cardTarget;
+    const cardId = card.dataset.cardId;
+    console.log(cardId)
     console.log("I have swiped to the left")
-    this.removeCardFromTheStack()
+    this.removeCardFromTheStack(cardId)
   }
 
   actionRightSwipe(event) {
     console.log('I have swiped to the right')
-    this.removeCardFromTheStack()
-    this.addToWishList()
+    const cardId = event.currentTarget.dataset.cardId;
+    this.removeCardFromTheStack(cardId)
+    this.addToWishList(cardId)
   }
 
 
-  _removeCardFromTheStack() {
-    console.log("je veux retirer la card.")
-    // Si c'est la derniere card,
-    // Logique pour retirer la card de la pile. => [card1, card2 etc..]
-    // Exemple .... .filter...ou ...point autre chose.. avec peuuuuttt etre
-    // un paramètre pour savoir quelle carte retirer - Je ne sais pas . Franchement à voir.
-    // Je supute.
-    // nonente. Ils sont chelous les belges. Mais je les aimes bien. A oui les suisses aussi.
+  removeCardFromTheStack(cardId) {
+    console.log(`Attempting to remove card with ID ${cardId}`);
+    if (cardId) {
+      const cardToRemove = this.cardStackTargets.find(card => card.dataset.cardId === cardId);
+      if (cardToRemove) {
+        cardToRemove.remove();
+        console.log(`Card with ID ${cardId} removed`);
+      } else {
+        console.log(`No card with ID ${cardId} found`);
+      }
+    } else {
+      console.log("No card ID provided");
+    }
   }
 
-  _addToWishList() {
-    console.log("J'ajoute ma card a ma wishlist")
+  addToWishList() {
+    const card = this.cardTarget;
+    const cardId = card.dataset.cardId;
+    console.log(`Adding card with ID ${cardId} to the wishlist`);
   }
 
   generateCardStacksHTML() {
@@ -47,11 +57,12 @@ export default class extends Controller {
   }
 
   generateMessageNoCardLeft() {
-    // retourn ele html s'il n'y a plus de card.
+    // retourne le html s'il n'y a plus de card.
   }
 
 
-  _cardHtml() {
-    // Retourn le HTML de la card.
+  cardHtml() {
+    // return html of the card
+
   }
 }

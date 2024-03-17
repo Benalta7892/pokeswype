@@ -19,6 +19,7 @@ class DashboardsController < ApplicationController
 
   def wish_list
     @user = current_user
+    @wish_list = @user.user_cards.where(wish_list: true)
   end
 
   def exchangeable_cards

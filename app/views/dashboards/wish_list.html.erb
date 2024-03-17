@@ -10,4 +10,10 @@
 
 <div class="title-wish-list">
   <h1>My wish list</h1>
+  <% @wish_list.each do |card| %>
+      <%= link_to card.card.ready_for_exchange_collectors.count > 0 ? collectors_card_path(card.card) :  card_path(card.card) do  %>
+      <%= image_tag card.card.image %>
+      <h2><%= card.card.ready_for_exchange_collectors.count %> ready for an exchange</h2>
+    <% end %>
+  <% end %>
 </div>
