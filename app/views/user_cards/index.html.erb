@@ -21,6 +21,16 @@
   <% end %>
 </div>
 
+<%# Pour afficher les cartes favorites de l'utilisateur %>
+<div class="filtre-dashboard">
+  <%= form_with url: user_user_cards_path(current_user), class: "form-filter", method: :get do |form| %>
+    <%= form.check_box :filter, { checked: params[:filter] == 'favorite', class: "checkbox" }, 'favorite', nil %>
+    <%= form.label :filter, 'Favorite Cards', for: 'filter_favorite', class: "label-filter" %>
+    <%= form.submit 'Filter', class: "btn-filter" %>
+  <% end %>
+</div>
+
+
 
 <%# Pour afficher les cartes de l'utilisateur %>
 <div class="display-cards">
@@ -41,10 +51,16 @@
 
 
       <%# Pour cocher une carte comme échangeable %>
-
       <%= form_with model: [current_user, user_card], class: "form-filter-update", method: :patch do |form| %>
         <%= form.check_box :exchangeable %>
         <%= form.label :exchangeable, 'Exchange', class: "label-filter" %>
+        <%= form.submit "Update", class: "update-card" %>
+      <% end %>
+
+      <%# Pour ajouter une carte a la liste des favoris %>
+      <%= form_with model: [current_user, user_card], class: "form-filter-update", method: :patch do |form| %>
+        <%= form.check_box :favorite %>
+        <%= form.label :favorite, 'Favorite', class: "label-filter" %>
         <%= form.submit "Update", class: "update-card" %>
       <% end %>
 

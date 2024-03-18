@@ -3,29 +3,32 @@
     <div class="banner">
       <div class="pikachu-logo"></div>
     </div>
-    <div class="title-home">
-      <div class="yellow-star"></div>
-      <p class="text-ul"><span>Favorites</span></p>
-    </div>
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
-      <div class="carousel-inner a-home">
-        <% @cards.sample(3).each_with_index do |card, index| %>
-          <div class="carousel-item <%="active" if index == 0%>">
-            <%= link_to card_path(card) do %>
-              <%= image_tag(card.image, class: "cards-pokemon") %>
-            <% end %>
-          </div>
-        <% end %>
+
+    <% if user_signed_in? && @favorite_cards.present? %>
+      <div class="title-home">
+        <div class="yellow-star"></div>
+        <p class="text-ul"><span>Favorites</span></p>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner a-home">
+          <% @favorite_cards.sample(3).each_with_index do |card, index| %>
+            <div class="carousel-item <%="active" if index == 0%>">
+              <%= link_to card_path(card.card) do %>
+                <%= image_tag(card.card.image, class: "cards-pokemon") %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <% end %>
 
     <div class="title-home">
     <div class="yellow-star"></div>

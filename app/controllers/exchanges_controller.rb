@@ -9,7 +9,6 @@ class ExchangesController < ApplicationController
   def create
     @exchange = Exchange.new(exchange_params)
     @exchange.dealer = current_user
-    raise
     if @exchange.save
       CardInterest.create(user: @exchange.receiver, card: @exchange.dealer_card, exchange: @exchange)
       redirect_to exchange_path(@exchange)
