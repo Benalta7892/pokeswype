@@ -1,5 +1,5 @@
 .pikachu-logo {
-  background-image: asset-url("pikachu-logo.png");
+  background-image: asset-url("pikachu-logo2.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -108,4 +108,12 @@
   margin-left: 12px;
   margin-right: 12px;
 
+}
+
+
+.mobile404 {
+
+  .img {
+    width: 100%;
+  }
 }

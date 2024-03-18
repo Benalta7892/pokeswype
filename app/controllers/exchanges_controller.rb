@@ -14,15 +14,6 @@ class ExchangesController < ApplicationController
       CardInterest.create(user: current_user, card: card, exchange: @exchange)
     end
     redirect_to exchange_path(@exchange)
-    #@exchange = Exchange.new(dea)
-    #@exchange.dealer = current_user
-    #raise
-    #if @exchange.save
-      #CardInterest.create(user: @exchange.receiver, card: @exchange.dealer_card, exchange: @exchange)
-      #redirect_to exchange_path(@exchange)
-    #else
-      #render :new
-  #end
   end
 
   def update

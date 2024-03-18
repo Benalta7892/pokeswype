@@ -5,7 +5,7 @@
   <% end %>
   <div class="container-show-exchange">
 
-    <h2>Échange proposé par <%= @exchange.dealer.first_name %></h2>
+    <h2>Exchange proposed by <%= @exchange.dealer.first_name %></h2>
     <div class="card-product">
         <%@exchange.cards_as_dealer.each do |card_interest|%>
           <%=image_tag (card_interest.card.image) %>
@@ -28,9 +28,9 @@
             <p><%= card_interest.card.rarity %></p>
           <% end %>
           </div>
-          <% else %>
           <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
           collection_user_path(@exchange.dealer, exchange_id: @exchange.id) %>
       <% end %>
   </div>
+</div>
 </div>

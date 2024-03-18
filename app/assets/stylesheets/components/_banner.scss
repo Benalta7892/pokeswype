@@ -34,5 +34,13 @@ body {
   h2 {
     margin-top: 60px;
     margin-bottom: 16px;
+    padding: 16px;
+    color: #19466e;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
+    border: 1px solid #F9D2A2;
+    width: 400px;
+    font-size: 26px;
   }
 }
