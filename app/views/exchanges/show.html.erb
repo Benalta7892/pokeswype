@@ -36,5 +36,12 @@
     <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
       collection_user_path(@exchange.dealer, exchange_id: @exchange.id) %>
   <% end %>
+
+<%# Lien pour valider l'échange %>
+  <% if current_user == @exchange.dealer && @exchange.card_interests.exists?(user: @exchange.receiver) %>
+    <%= link_to "Contacter", exchange_chatrooms_path(@exchange), data: { turbo_method: "post" } %>
+  <% end %>
+
+
 </div>
 </div>
