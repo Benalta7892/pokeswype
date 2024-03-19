@@ -28,9 +28,9 @@
             <p><%= card_interest.card.rarity %></p>
           <% end %>
           </div>
-          <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
-          collection_user_path(@exchange.dealer, exchange_id: @exchange.id) %>
       <% end %>
   </div>
+        <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
+          collection_user_path(@exchange.dealer, exchange_id: @exchange.id) %>
 </div>
 </div>

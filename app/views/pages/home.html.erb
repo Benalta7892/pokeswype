@@ -4,6 +4,20 @@
       <div class="pikachu-logo"></div>
     </div>
 
+    <% if user_signed_in? %>
+      <% if @user_exchanges_as_receiver > 0 %>
+        <%= link_to current_exchanges_dashboards_path do %>
+          <p>You have <%= @user_exchanges_as_receiver %> new exchange request</p>
+        <% end %>
+      <% end %>
+
+      <% if @user_exchanges_as_dealer > 0 %>
+        <%= link_to current_exchanges_dashboards_path do %>
+          <p>You have <%= @user_exchanges_as_dealer %> response to an exchange request</p>
+        <% end %>
+      <% end %>
+    <% end %>
+
     <% if user_signed_in? && @favorite_cards.present? %>
       <div class="title-home">
         <div class="yellow-star"></div>
