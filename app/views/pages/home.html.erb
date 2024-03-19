@@ -4,6 +4,21 @@
       <div class="pikachu-logo"></div>
     </div>
 
+<%# Afficher les nombre d'exchanges sur la home %>
+    <% if user_signed_in? %>
+      <% if @user_exchanges_as_receiver > 0 %>
+        <%= link_to current_exchanges_dashboards_path do %>
+          <button class="notification">⚠ <%= pluralize(@user_exchanges_as_receiver,  "proposal") %></button>
+        <% end %>
+      <% end %>
+
+      <% if @user_exchanges_as_dealer > 0 %>
+        <%= link_to current_exchanges_dashboards_path do %>
+          <button class="notification">⚠ <%= pluralize(@user_exchanges_as_dealer,  "answer") %></button>
+        <% end %>
+      <% end %>
+    <% end %>
+
     <% if user_signed_in? && @favorite_cards.present? %>
       <div class="title-home">
         <div class="yellow-star"></div>
