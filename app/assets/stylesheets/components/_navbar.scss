@@ -39,11 +39,36 @@
 .pokeball {
   width: 100px;
   position: absolute;
-  left: 38%;
-  right: 40%;
+  left: 50%;
+  transform: translateX(-50%);
   top: -16px;
-
 }
+.pokeball:hover {
+  width: 100px;
+  position: absolute;
+ left: 50%;
+  transform: translateX(-50%);
+  top: -16px;
+  animation: move 1s forwards;
+}
+@keyframes move {
+  0%{
+  top:-16px;
+  }
+  25%{
+  top:-32px;
+  }
+  50%{
+  top:-20px;
+  }
+  75%{
+  top:-8px;
+  }
+  100%{
+  top:-16px;
+  }
+
+  }
 .container-fluid {
   width: 100%;
   max-width: 430px;
