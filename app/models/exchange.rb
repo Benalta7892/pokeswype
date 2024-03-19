@@ -5,5 +5,13 @@ class Exchange < ApplicationRecord
   has_many :reviews
   has_many :cards, through: :card_interests
 
-  enum status: { pending: 0, accepted: 1, rejected: 2, finished: 3 }
+  enum status: { initialised: 0, pending: 1, accepted: 2, rejected: 3, finished: 4 }
+
+  def cards_as_receiver
+    card_interests.where(user: receiver)
+  end
+
+  def cards_as_dealer
+    card_interests.where(user: dealer)
+  end
 end

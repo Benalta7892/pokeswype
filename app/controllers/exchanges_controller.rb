@@ -7,14 +7,23 @@ class ExchangesController < ApplicationController
   end
 
   def create
-    @exchange = Exchange.new(exchange_params)
-    @exchange.dealer = current_user
-    if @exchange.save
-      CardInterest.create(user: @exchange.receiver, card: @exchange.dealer_card, exchange: @exchange)
-      redirect_to exchange_path(@exchange)
-    else
-      render :new
+    @cards = Card.where(id: params[:card_interest_ids])
+
+    @exchange = Exchange.create(dealer: current_user, receiver_id: params[:user_id].to_i)
+    @cards.each do |card|
+      CardInterest.create(user: current_user, card: card, exchange: @exchange)
     end
+    redirect_to exchange_path(@exchange)
+  end
+
+  def update
+    @cards = Card.where(id: params[:card_interest_ids])
+
+    @exchange = Exchange.find(params[:id])
+    @cards.each do |card|
+      CardInterest.create(user: current_user, card: card, exchange: @exchange)
+    end
+    redirect_to exchange_path(@exchange)
   end
 
   private
