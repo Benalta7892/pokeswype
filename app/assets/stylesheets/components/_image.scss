@@ -85,16 +85,18 @@
   z-index: 5;
 }
 .favoris input[type="submit"] {
-  background-color: transparent;
-  background-image: asset-url("favoris.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   align-items: center;
   position: absolute;
-  top: 80px;
-  right: -15px;
-  height: 70px;
-  width: 120px;
+  font-family: 'Pixelify Sans', sans-serif;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #EFB7E9 48%);
+  color: #19466e;
+  border: 1px solid #88B3C4;
+  border-radius: 8px;
+  top: 55px;
+  right: 44px;
+  height: 34px;
+  width: 141px;
   margin: 8px;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -109,8 +111,6 @@
   margin-right: 12px;
 
 }
-
-
 .mobile404 {
 
   .img {
