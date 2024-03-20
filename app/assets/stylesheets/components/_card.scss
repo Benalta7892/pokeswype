@@ -384,20 +384,21 @@
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 100px;
-  background-color: #88B3C4;
+  margin: 24px;
   color: white;
+  padding: 16px;
   font-size: 15px;
   font-family: 'Pixelify Sans', sans-serif;
-  padding: 0px;
-  margin-top: 16px;
   border-bottom: 1px solid white;
-  height: 88px;
   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
   border: 1px solid #87C4C2;
+  border-radius: 8px;
+  width: auto;
   h2 {
     margin-bottom: 16px;
+    color: #19466e;
   }
   .form-sign-in {
     display: flex;
@@ -422,21 +423,21 @@
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 100px;
-  font-family: 'Pixelify Sans', sans-serif;
-  background-color: #88B3C4;
+  margin: 24px;
   color: white;
+  padding: 16px;
   font-size: 15px;
   font-family: 'Pixelify Sans', sans-serif;
-  padding: 0px;
-  margin-top: 16px;
   border-bottom: 1px solid white;
-  height: 88px;
   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
   background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #EFB7E9 48%);
   border: 1px solid #87C4C2;
+  border-radius: 8px;
+  width: auto;
   h2 {
     margin-bottom: 16px;
+    color: #19466e;
   }
   .form-sign-up {
     display: flex;
@@ -452,4 +453,11 @@
       border: 1px solid #88B3C4;
     }
   }
+}
+
+.modal-content {
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #41B4B2 48%);
+  border-radius: 8px;
 }
