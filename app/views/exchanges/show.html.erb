@@ -41,7 +41,7 @@
 <% if current_user == @exchange.dealer &&
     @exchange.card_interests.exists?(user: @exchange.receiver) &&
     @exchange.chatroom.nil? %>
-    <%= link_to "Open chatroom", exchange_chatrooms_path(exchange_id: @exchange.id), data: { turbo_method: "post" }, class: "link-chatroom" %>
+    <%= link_to "Open chatroom", exchange_chatrooms_path(@exchange), data: { turbo_method: "post" }, class: "link-chatroom" %>
     <% else %>
       <% if current_user == @exchange.dealer && @exchange.chatroom.present? %>
         <%= link_to "Open chatroom", chatroom_path(@exchange.chatroom), class: "link-chatroom" %>
