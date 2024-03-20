@@ -1,30 +1,32 @@
-<div class="card-profil">
-  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
-    <%= image_tag asset_path('back-arraw.png') %>
-  <% end %>
-  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
-  <h1><%= @user.first_name %></h1>
-  <p><%= @total_cards %> cards</p>
-  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
-</div>
+<div style="padding-bottom: 100px;">
+  <div class="card-profil">
+    <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+      <%= image_tag asset_path('back-arraw.png') %>
+    <% end %>
+    <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+    <h1><%= @user.first_name %></h1>
+    <p><%= @total_cards %> cards</p>
+    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+  </div>
 
-<div class="title-current-exchanges">
-  <h1>Current exchanges a dealer</h1>
-</div>
+  <div class="title-current-exchanges">
+    <h1>Current exchanges a dealer</h1>
+  </div>
 
-<div>
-<% @user_exchanges_as_dealer.each do |exchange| %>
-<%= link_to exchange_path(exchange) do %>
-  <%= exchange.status %>
-  <% end %>
-  <% end %>
-</div>
-
-<div>
-  <h1>current exhanges as receivers</h1>
-  <% @user_exchanges_as_receiver.each do |exchange| %>
+  <div>
+  <% @user_exchanges_as_dealer.each do |exchange| %>
   <%= link_to exchange_path(exchange) do %>
     <%= exchange.status %>
-  <% end %>
-  <% end %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="title-current-exchanges">
+    <h1>current exhanges as receivers</h1>
+    <% @user_exchanges_as_receiver.each do |exchange| %>
+    <%= link_to exchange_path(exchange) do %>
+      <%= exchange.status %>
+    <% end %>
+    <% end %>
+  </div>
 </div>

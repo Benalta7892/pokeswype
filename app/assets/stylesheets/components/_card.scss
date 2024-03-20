@@ -9,6 +9,7 @@
   margin: 8px;
   position: relative;
   margin-bottom: 32px;
+  border-radius: 8px;
 
   .enveloppe {
     position: absolute;
@@ -35,6 +36,7 @@
   position: relative;
   height: 238px;
   border: 1px solid #87C4C2;
+  border-radius: 8px;
 
   h2 {
     margin: 16px;
@@ -68,6 +70,7 @@
   position: relative;
   height: 238px;
   border: 1px solid #87C4C2;
+  border-radius: 8px;
 
   h2 {
     margin: 16px;
@@ -112,11 +115,12 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #FCB5B5 48%);
     border: 1px solid #87C4C2;
+    border-radius: 8px;
   }
 
   .onglet-profil-small2 {
@@ -130,11 +134,12 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #EFB7E9 48%);
     border: 1px solid #87C4C2;
+    border-radius: 8px;
   }
 
   .onglet-profil-small3 {
@@ -148,11 +153,12 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
     border: 1px solid #87C4C2;
+    border-radius: 8px;
   }
 
   .onglet-profil-small4 {
@@ -166,10 +172,11 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #6899C6 48%);
+    border-radius: 8px;
     border: 1px solid #87C4C2;
   }
 }

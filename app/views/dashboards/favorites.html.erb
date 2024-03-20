@@ -1,21 +1,23 @@
-<div class="card-profil">
-  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
-    <%= image_tag asset_path('back-arraw.png') %>
-  <% end %>
-  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
-  <h1><%= @user.first_name %></h1>
-  <p><%= @total_cards %> cards</p>
-  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+<div style="padding-bottom: 100px;">
+  <div class="card-profil">
+    <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+      <%= image_tag asset_path('back-arraw.png') %>
+    <% end %>
+    <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+    <h1><%= @user.first_name %></h1>
+    <p><%= @total_cards %> cards</p>
+    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+  </div>
+
+  <div class="title-favorite-cards">
+    <h1>My favorites cards</h1>
+  </div>
+
+
+
+    <% @favorite_cards.each do |user_card| %>
+        <%= link_to card_path(user_card.card) do %>
+          <%= image_tag user_card.card.image %>
+        <% end %>
+    <% end %>
 </div>
-
-<div class="title-favorite-cards">
-  <h1>My favorites cards</h1>
-</div>
-
-
-
-  <% @favorite_cards.each do |user_card| %>
-      <%= link_to card_path(user_card.card) do %>
-        <%= image_tag user_card.card.image %>
-      <% end %>
-  <% end %>
