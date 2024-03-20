@@ -19,7 +19,7 @@ class DashboardsController < ApplicationController
 
   def wish_list
     @user = current_user
-    @wish_list = "TODO"
+    @cards_wished = current_user.cards_wished
   end
 
   def exchangeable_cards
