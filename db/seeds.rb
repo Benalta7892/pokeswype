@@ -33,17 +33,17 @@ end
 
 puts "Creating user_cards ..."
 
-UserCard.create!(user: remy, card: Card.first, exchangeable: true, wish_list: true)
+UserCard.create!(user: remy, card: Card.first, exchangeable: true)
 UserCard.create!(user: remy, card: Card.second, exchangeable: true)
-UserCard.create!(user: remy, card: Card.fourth, exchangeable: true, wish_list: true)
+UserCard.create!(user: remy, card: Card.fourth, exchangeable: true)
 
 UserCard.create!(user: sacha, card: Card.first, exchangeable: true)
-UserCard.create!(user: sacha, card: Card.third, exchangeable: false, wish_list: true)
+UserCard.create!(user: sacha, card: Card.third, exchangeable: false)
 UserCard.create!(user: sacha, card: Card.fourth, exchangeable: true)
 
 UserCard.create!(user: john, card: Card.first, exchangeable: true)
 UserCard.create!(user: john, card: Card.second, exchangeable: true)
-UserCard.create!(user: john, card: Card.third, exchangeable: false, wish_list: true)
+UserCard.create!(user: john, card: Card.third, exchangeable: false)
 
 
 puts "Finished!"
