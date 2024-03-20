@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :cards, only: [:index, :show, :new, :create] do
+    resources :card_wishes, only: [:create]
     resources :card_interests, only: [:new, :create]
     collection do
       get "search"

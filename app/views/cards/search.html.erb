@@ -4,11 +4,11 @@
       <%= image_tag asset_path('back-arrow.png') %>
     <% end %>
     <%# <div class="card-profil-search"> %>
-      <div class="a-home" data-swipe-target="card">
+      <div class="a-home" data-swipe-target="cards">
         <% if @cards.any? %>
           <% @cards.each do |card| %>
-              <div class="card-profil-search" data-card-id="<% card.id %>">
-                <%= image_tag(card.image) %>
+              <div class="card-profil-search">
+                <%= image_tag(card.image, {data: { card_id: card.id }  } ) %>
               </div>
               <!-- <%# <h2><%= card.ready_for_exchange_collectors.count %> ready for an exchange</h2> %> -->
           <% end %>
