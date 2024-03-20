@@ -6,7 +6,7 @@
     <div class="favoris"><% if user_signed_in? %>
         <%= form_with model: [current_user, current_user.user_cards.build], url: user_user_cards_path(current_user), method: :post do |form| %>
           <%= form.hidden_field :card_id, value: @card.id %>
-          <%= form.submit ''%>
+          <%= form.submit 'Add to Collection'%>
           <% end %>
         <% end %>
   </div>
@@ -15,8 +15,6 @@
         <li>Name: <%= @card.name %></li>
         <li>Extension: <%= @card.extension %></li>
         <li>Serie: <%= @card.serie %></li>
-        <li>Rarity: <%= @card.rarity %></li>
-        <li>Card Number: <%= @card.number %> </li>
         <li>Trend: <%= @card.price %> Euros </li>
       </ul>
   </div>

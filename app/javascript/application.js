@@ -4,3 +4,4 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 import "@rails/actioncable"
+// import "nes.css/css/nes.min.css";
