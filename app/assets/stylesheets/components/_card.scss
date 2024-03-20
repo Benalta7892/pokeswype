@@ -376,3 +376,88 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin: 24px;
+  color: white;
+  padding: 16px;
+  font-size: 15px;
+  font-family: 'Pixelify Sans', sans-serif;
+  border-bottom: 1px solid white;
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
+  border: 1px solid #87C4C2;
+  border-radius: 8px;
+  width: auto;
+  h2 {
+    margin-bottom: 16px;
+    color: #19466e;
+  }
+  .form-sign-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    input {
+      margin-bottom: 16px;
+      padding: 8px;
+      width: 200px;
+      border-radius: 8px;
+      border: 1px solid #88B3C4;
+    }
+  }
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin: 24px;
+  color: white;
+  padding: 16px;
+  font-size: 15px;
+  font-family: 'Pixelify Sans', sans-serif;
+  border-bottom: 1px solid white;
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #EFB7E9 48%);
+  border: 1px solid #87C4C2;
+  border-radius: 8px;
+  width: auto;
+  h2 {
+    margin-bottom: 16px;
+    color: #19466e;
+  }
+  .form-sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    input {
+      margin-bottom: 16px;
+      padding: 8px;
+      width: 200px;
+      border-radius: 8px;
+      border: 1px solid #88B3C4;
+    }
+  }
+}
+
+.modal-content {
+  box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #41B4B2 48%);
+  border-radius: 8px;
+}
