@@ -3,12 +3,14 @@ require "open-uri"
 
 puts "Destroying all data..."
 
-Chatroom.destroy_all
+Message.destroy_all
 CardInterest.destroy_all
-Exchange.destroy_all
 UserCard.destroy_all
-User.destroy_all
+Chatroom.destroy_all
+Exchange.destroy_all
 Card.destroy_all
+User.destroy_all
+
 
 # puts "Creating usersmessage"
 

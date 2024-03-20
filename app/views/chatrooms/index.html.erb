@@ -1,0 +1,24 @@
+<div style="padding-bottom: 100px;">
+  <div class="card-profil">
+    <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+      <%= image_tag asset_path('back-arraw.png') %>
+    <% end %>
+    <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %>
+    <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+    <h1><%= @user.first_name %></h1>
+    <p><%= @total_cards %> cards</p>
+    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+  </div>
+
+<% @chatrooms.each do |chatroom| %>
+  <%= link_to chatroom_path(chatroom) do %>
+    <div class="chatroom-index">
+        <%= image_tag chatroom.other_user(current_user).avatar %>
+        <p>Chat with <%= chatroom.other_user(current_user).first_name %></p>
+        <%# les cartes interests du current user %>
+        <% chatroom.exchange.card_interests.where(user: current_user).each do |card_interest| %>
+          <%= image_tag card_interest.card.image %>
+        <% end %>
+    </div>
+  <% end %>
+<% end %>
