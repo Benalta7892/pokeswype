@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2024_03_19_200437) do
-=======
-ActiveRecord::Schema[7.1].define(version: 2024_03_17_232900) do
->>>>>>> da1cf07 ( Hammer set and wishlist done)
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,6 +88,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_17_232900) do
     t.bigint "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "wish_list"
     t.boolean "favorite", default: false
     t.index ["card_id"], name: "index_user_cards_on_card_id"
     t.index ["user_id"], name: "index_user_cards_on_user_id"
