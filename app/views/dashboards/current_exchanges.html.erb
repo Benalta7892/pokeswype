@@ -9,22 +9,49 @@
 </div>
 
 <div class="title-current-exchanges">
-  <h1>Current exchanges a dealer</h1>
+  <h1>Current exchanges</h1>
 </div>
 
+
 <div>
+<h2>As dealer</h2>
 <% @user_exchanges_as_dealer.each do |exchange| %>
 <%= link_to exchange_path(exchange) do %>
-  <%= exchange.status %>
+  <div class="chatroom-index">
+    <%= image_tag exchange.receiver.avatar %>
+    <p>Exchange with <%= exchange.receiver.first_name %></p>
+    <%# les cartes interests du current user %>
+    <% exchange.card_interests.where(user: current_user).each do |card_interest| %>
+      <%= image_tag card_interest.card.image %>
+    <% end %>
+  <p>Status : <%= exchange.status %></p>
+  </div>
   <% end %>
   <% end %>
 </div>
 
 <div>
-  <h1>current exhanges as receivers</h1>
-  <% @user_exchanges_as_receiver.each do |exchange| %>
-  <%= link_to exchange_path(exchange) do %>
-    <%= exchange.status %>
+<h2>As receiver</h2>
+<% @user_exchanges_as_receiver.each do |exchange| %>
+<%= link_to exchange_path(exchange) do %>
+  <div class="chatroom-index">
+    <%= image_tag exchange.dealer.avatar %>
+    <p>Exchange with <%= exchange.dealer.first_name %></p>
+    <%# les cartes interests du current user %>
+    <% exchange.card_interests.where(user: current_user).each do |card_interest| %>
+      <%= image_tag card_interest.card.image %>
+    <% end %>
+  <p>Status : <%= exchange.status %></p>
+  </div>
   <% end %>
   <% end %>
 </div>
+
+<%# <div>
+  <h2>As receiver</h2>
+  <% @user_exchanges_as_receiver.each do |exchange| %>
+  <%# <%= link_to exchange_path(exchange) do %>
+    <%# <%= exchange.status %>
+  <%# <% end %>
+  <%# <% end %>
+<%# </div> %>
