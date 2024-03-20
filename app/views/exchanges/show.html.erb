@@ -33,14 +33,26 @@
 
 <%# Lien pour selection de cartes du receiver dans la collection du dealer %>
   <% if current_user == @exchange.receiver && !@exchange.card_interests.exists?(user: @exchange.receiver) %>
-    <%= link_to "Sélectionner des cartes dans la collection de #{@exchange.dealer.first_name}",
-      collection_user_path(@exchange.dealer, exchange_id: @exchange.id) %>
+    <%= link_to "Select cards from #{@exchange.dealer.first_name}",
+      collection_user_path(@exchange.dealer, exchange_id: @exchange.id), class: "link-chatroom" %>
   <% end %>
 
-<%# Lien pour valider l'échange %>
-  <% if current_user == @exchange.dealer && @exchange.card_interests.exists?(user: @exchange.receiver) %>
-    <%= link_to "Contacter", exchange_chatrooms_path(@exchange), data: { turbo_method: "post" } %>
+<%# Lien pour creer la messagerie de l'échange si le receiver a selectionner ces cartes %>
+<% if current_user == @exchange.dealer &&
+    @exchange.card_interests.exists?(user: @exchange.receiver) &&
+    @exchange.chatroom.nil? %>
+    <%= link_to "Open chatroom", exchange_chatrooms_path(@exchange), data: { turbo_method: "post" }, class: "link-chatroom" %>
+    <% else %>
+      <% if current_user == @exchange.dealer && @exchange.chatroom.present? %>
+        <%= link_to "Open chatroom", chatroom_path(@exchange.chatroom), class: "link-chatroom" %>
+      <% end %>
   <% end %>
+
+  <%# lien vers la chatroom créée par le dealer pour le receiver %>
+  <% if current_user == @exchange.receiver && @exchange.chatroom.present? %>
+    <%= link_to "Open chatroom", chatroom_path(@exchange.chatroom), class: "link-chatroom" %>
+  <% end %>
+
 
 
 </div>

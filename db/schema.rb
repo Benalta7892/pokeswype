@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_19_200437) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_20_175930) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_19_200437) do
     t.index ["card_id"], name: "index_card_interests_on_card_id"
     t.index ["exchange_id"], name: "index_card_interests_on_exchange_id"
     t.index ["user_id"], name: "index_card_interests_on_user_id"
+  end
+
+  create_table "card_wishes", force: :cascade do |t|
+    t.bigint "card_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_card_wishes_on_card_id"
+    t.index ["user_id"], name: "index_card_wishes_on_user_id"
   end
 
   create_table "cards", force: :cascade do |t|
@@ -116,6 +125,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_19_200437) do
   add_foreign_key "card_interests", "cards"
   add_foreign_key "card_interests", "exchanges"
   add_foreign_key "card_interests", "users"
+  add_foreign_key "card_wishes", "cards"
+  add_foreign_key "card_wishes", "users"
   add_foreign_key "chatrooms", "exchanges"
   add_foreign_key "exchanges", "users", column: "dealer_id"
   add_foreign_key "exchanges", "users", column: "receiver_id"
