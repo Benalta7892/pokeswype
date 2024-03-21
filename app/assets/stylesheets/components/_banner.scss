@@ -16,12 +16,12 @@ body {
 }
 .container-search {
   position: relative;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: scroll;
+  height: 80%;
+  // background: scroll;
 }
 .container-show-exchange {
   position: relative;

@@ -187,9 +187,15 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 8px;
-
+  a {
+    width: 50%;
+  }
+  h2 {
+    font-size: 18px;
+    margin: 16px;
+  }
   .pokemon-cards {
+    margin-top: 36px;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
     margin: 8px;
     height: 258px;
@@ -258,40 +264,20 @@
 
 
 .card-profil-search {
-  width: 100px;
   height: 150px;
   position: absolute;
   transition: transform 0.5s ease;
+  top: 100px;
+  z-index: 6;
+  img {
+    margin-top: 12px;
+    margin-left: 0px;
+  }
 
   &:hover {
     transform: rotate(-10deg) translateX(5px) translateY(-5px);
   }
 }
-
-
-// margin-top: 16px;
-// display: flex;
-// justify-content: center;
-// flex-direction: column;
-// align-items: center;
-// img {
-//   margin-top: 24px;
-//   justify-self: center;
-//   width: 100%;
-//   z-index: 6;
-//   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
-//   border-radius: 8px;
-// }
-// a {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-// }
-// h2 {
-//   font-size: 24px;
-// }
-// }
 
 .card-collectors {
   overflow: hidden;

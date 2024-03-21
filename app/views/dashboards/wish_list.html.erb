@@ -1,4 +1,4 @@
-<div style="padding-bottom: 100px;">
+<div style="marging-bottom: 150px;">
   <div class="card-profil">
     <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
       <%= image_tag asset_path('back-arraw.png') %>
@@ -9,12 +9,19 @@
     <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
   </div>
 
-<div class="title-wish-list">
-  <h1>My wish list</h1>
-  <% @cards_wished.each do |card| %>
-      <%= link_to card.ready_for_exchange_collectors.count > 0 ? collectors_card_path(card) :  card_path(card) do  %>
-      <%= image_tag card.image %>
-      <h2><%= card.ready_for_exchange_collectors.count %> ready for an exchange</h2>
+  <div class="title-wish-list">
+    <h1>My wish list</h1>
+  </div>
+    <div class="display-cards">
+      <% @cards_wished.each do |card| %>
+  <%= link_to card.ready_for_exchange_collectors.count > 0 ? collectors_card_path(card) : card_path(card) do %>
+    <%= image_tag card.image, class: "pokemon-cards" %>
+      <% if card.ready_for_exchange_collectors.count <= 1 %>
+        <h2>Exchange Ready (<%= card.ready_for_exchange_collectors.count %>)</h2>
+      <% else %>
+        <h2>Exchanges Ready (<%= card.ready_for_exchange_collectors.count %>)</h2>
+      <% end %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
