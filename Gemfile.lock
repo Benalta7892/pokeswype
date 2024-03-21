@@ -138,6 +138,7 @@ GEM
     geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hammerjs-rails (2.0.8)
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -324,6 +325,7 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
   geocoder
+  hammerjs-rails
   importmap-rails
   jbuilder
   pg (~> 1.1)

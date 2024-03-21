@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 
     @user_exchanges_as_dealer = @user.exchanges_as_dealer.where.not(status: "finished").count if user_signed_in?
     @user_exchanges_as_receiver = @user.exchanges_as_receiver.where.not(status: "finished").count if user_signed_in?
+    @top_trending_cards = @cards.order(price: :desc)
   end
 
   def dashboard

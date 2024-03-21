@@ -5,19 +5,35 @@
     </div>
 
 <%# Afficher les nombre d'exchanges sur la home %>
-    <% if user_signed_in? %>
-      <% if @user_exchanges_as_receiver > 0 %>
-        <%= link_to current_exchanges_dashboards_path do %>
-          <button class="notification">⚠ <%= pluralize(@user_exchanges_as_receiver,  "proposal") %></button>
-        <% end %>
+
+  <% if user_signed_in? %>
+    <% if @user_exchanges_as_receiver > 0 %>
+      <%= link_to current_exchanges_dashboards_path do %>
+        <button class="notification">⚠ <%= pluralize(@user_exchanges_as_receiver,  "proposal") %></button>
       <% end %>
+    <% end %>
+    <div class="title-home">
+      <div class="yellow-star"></div>
+      <p class="text-ul"><span>Favorites</span></p>
+    </div>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+      <div class="carousel-inner a-home">
+        <% @cards.sample(100).each_with_index do |card, index| %>
+          <div class="carousel-item <%= "active" if index == 0 %>">
+            <%= link_to card_path(card) do %>
+              <%= image_tag(card.image, class: "cards-pokemon") %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
 
       <% if @user_exchanges_as_dealer > 0 %>
         <%= link_to current_exchanges_dashboards_path do %>
           <button class="notification">⚠ <%= pluralize(@user_exchanges_as_dealer,  "answer") %></button>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
+  <% end %>
 
     <%# <a href="#" class="nes-badge">
     <span class="is-warning">great</span>
@@ -53,21 +69,21 @@
     <div class="yellow-star"></div>
       <p class="text-ul"><span>Top Trend</span></p>
     </div>
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div id="carouselExampleFada" class="carousel slide carousel-fade">
       <div class="carousel-inner a-home">
-        <% @cards.sample(3).each_with_index do |card, index| %>
-          <div class="carousel-item <%="active" if index == 0%>">
+        <% @top_trending_cards.each_with_index do |card, index| %>
+          <div class="carousel-item <%="active" if index == 0 %>">
             <%= link_to card_path(card) do %>
               <%= image_tag(card.image, class: "cards-pokemon") %>
             <% end %>
           </div>
         <% end %>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFada" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFada" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -77,7 +93,7 @@
     <div class="yellow-star"></div>
       <p class="text-ul"><span>Near me</span></p>
     </div>
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div id="carouselExampleFado" class="carousel slide carousel-fade">
       <div class="carousel-inner a-home">
         <% @cards.sample(3).each_with_index do |card, index| %>
           <div class="carousel-item <%="active" if index == 0%>">
@@ -87,11 +103,11 @@
           </div>
         <% end %>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFado" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFado" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
