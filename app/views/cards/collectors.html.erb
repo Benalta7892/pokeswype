@@ -16,7 +16,20 @@
               <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
               <p><%= collector.email %></p>
               <p> Number of cards : <%= collector.cards.count %> </p>
-              <p> Rating : <%= image_tag("etoile-rating.png") %></p>
+              <p> Rating : <%= image_tag("etoile-rating.png") %>
+<div class="review">
+  <h2>Laissez une évaluation</h2>
+  <%= simple_form_for [@exchange, @review] do |f| %>
+    <%= f.input :rating, as: :hidden  %>
+    <div class="my-3">
+      <% Review::AUTHORIZED_RATINGS.each do |index| %>
+        <i id="<%= index %>" class="review-rating far fa-star"></i>
+      <% end %>
+    </div>
+    <%= f.submit class: "btn btn-primary", value: "Valider" %>
+  <% end %>
+</div>
+              </div></p>
             </div>
           </div>
           <% end %>

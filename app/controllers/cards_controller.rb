@@ -18,6 +18,7 @@ class CardsController < ApplicationController
 
   def collectors
     @collectors = @card.ready_for_exchange_collectors
+    @exchange = Exchange.new
   end
 
   private
