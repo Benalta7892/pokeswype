@@ -4,7 +4,7 @@
       <%= image_tag asset_path('back-arrow.png') %>
     <% end %>
     <%# <div class="card-profil-search"> %>
-      <div class="a-home" data-swipe-target="cards">
+      <div class="card-show" data-swipe-target="cards">
         <% if @cards.any? %>
           <% @cards.each do |card| %>
               <div class="card-profil-search">
@@ -15,7 +15,5 @@
         <% else %>
           <h1><em>Sorry, no cards found.</em><h1>
         <% end %>
-        <div style="margin-bottom: 100px;">
-      </div>
   </div>
 </div>

@@ -9,6 +9,7 @@
   margin: 8px;
   position: relative;
   margin-bottom: 32px;
+  border-radius: 8px;
   cursor: pointer;
 
   .enveloppe {
@@ -36,6 +37,7 @@
   position: relative;
   height: 238px;
   border: 1px solid #87C4C2;
+  border-radius: 8px;
 
   h2 {
     margin: 16px;
@@ -69,6 +71,7 @@
   position: relative;
   height: 238px;
   border: 1px solid #87C4C2;
+  border-radius: 8px;
 
   h2 {
     margin: 16px;
@@ -113,11 +116,12 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
-    box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
-    background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #FCB5B5 48%);
+    height: 100px;
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #FCB5B5 48%);
     border: 1px solid #87C4C2;
+    border-radius: 8px;
   }
 
   .onglet-profil-small2 {
@@ -131,11 +135,12 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #EFB7E9 48%);
     border: 1px solid #87C4C2;
+    border-radius: 8px;
   }
 
   .onglet-profil-small3 {
@@ -149,11 +154,12 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #F9D2A2 48%);
     border: 1px solid #87C4C2;
+    border-radius: 8px;
   }
 
   .onglet-profil-small4 {
@@ -167,10 +173,11 @@
     padding: 0px;
     margin-top: 16px;
     border-bottom: 1px solid white;
-    height: 88px;
+    height: 100px;
     box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #6899C6 48%);
+    border-radius: 8px;
     border: 1px solid #87C4C2;
   }
 }
@@ -180,9 +187,15 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 8px;
-
+  a {
+    width: 50%;
+  }
+  h2 {
+    font-size: 18px;
+    margin: 16px;
+  }
   .pokemon-cards {
+    margin-top: 36px;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
     margin: 8px;
     height: 258px;
@@ -251,52 +264,33 @@
 
 
 .card-profil-search {
-  width: 100px;
   height: 150px;
   position: absolute;
   transition: transform 0.5s ease;
+  top: 100px;
+  z-index: 6;
+  img {
+    margin-top: 12px;
+    margin-left: 0px;
+  }
 
   &:hover {
     transform: rotate(-10deg) translateX(5px) translateY(-5px);
   }
 }
 
-
-// margin-top: 16px;
-// display: flex;
-// justify-content: center;
-// flex-direction: column;
-// align-items: center;
-// img {
-//   margin-top: 24px;
-//   justify-self: center;
-//   width: 100%;
-//   z-index: 6;
-//   box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
-//   border-radius: 8px;
-// }
-// a {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-// }
-// h2 {
-//   font-size: 24px;
-// }
-// }
-
 .card-collectors {
   overflow: hidden;
-  height: 120px;
-  background: white;
+  height: 140px;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #F9D2A2 48%);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   margin-top: 20px;
   margin-bottom: auto;
+  border-radius: 8px;
 }
-
 .card-collectors img {
   margin: auto;
   width: 100px;
@@ -304,19 +298,21 @@
 }
 
 .card-collectors h2 {
-  font-size: 12px;
+  font-size: 18px;
   text-align: left;
   font-weight: bold;
   margin: 0;
 }
 
 .card-collectors p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   text-align: left;
   margin-bottom: 0;
   margin-top: 8px;
+  color: #19466e;
+  min-width: 190px;
 }
 
 .card-collectors .card-collectors-infos {

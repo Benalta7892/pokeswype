@@ -1,34 +1,35 @@
-<div class="card-profil">
-  <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
-    <%= image_tag asset_path('back-arraw.png') %>
-  <% end %>
-  <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
-  <h1><%= @user.first_name %></h1>
-  <p><%= @total_cards %> cards</p>
-  <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
-</div>
+<div style="padding-bottom: 100px;">
+  <div class="card-profil">
+    <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+      <%= image_tag asset_path('back-arraw.png') %>
+    <% end %>
+    <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+    <h1><%= @user.first_name %></h1>
+    <p><%= @total_cards %> cards</p>
+    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
+  </div>
 
-<div class="title-collection">
-  <h1>My collection - <%= @total_cards %> cards</h1>
-</div>
+  <div class="title-collection">
+    <h1>My collection - <%= @total_cards %> cards</h1>
+  </div>
 
 <%# Pour filtrer et voir seulement les cartes echangeables ou non %>
-<div class="filtre-dashboard">
-  <%= form_with url: user_user_cards_path(current_user), class: "form-filter", method: :get do |form| %>
-    <%= form.check_box :filter, { checked: params[:filter] == 'exchangeable', class: "checkbox" }, 'exchangeable', nil %>
-    <%= form.label :filter, 'Exchangeable Cards', for: 'filter_exchangeable', class: "label-filter" %>
-    <%= form.submit 'Filter', class: "btn-filter" %>
-  <% end %>
-</div>
+  <div class="filtre-dashboard">
+    <%= form_with url: user_user_cards_path(current_user), class: "form-filter", method: :get do |form| %>
+      <%= form.check_box :filter, { checked: params[:filter] == 'exchangeable', class: "checkbox" }, 'exchangeable', nil %>
+      <%= form.label :filter, 'Exchangeable Cards', for: 'filter_exchangeable', class: "label-filter" %>
+      <%= form.submit 'Filter', class: "btn-filter" %>
+    <% end %>
+  </div>
 
 <%# Pour afficher les cartes favorites de l'utilisateur %>
-<div class="filtre-dashboard">
-  <%= form_with url: user_user_cards_path(current_user), class: "form-filter", method: :get do |form| %>
-    <%= form.check_box :filter, { checked: params[:filter] == 'favorite', class: "checkbox" }, 'favorite', nil %>
-    <%= form.label :filter, 'Favorite Cards', for: 'filter_favorite', class: "label-filter" %>
-    <%= form.submit 'Filter', class: "btn-filter" %>
-  <% end %>
-</div>
+  <div class="filtre-dashboard">
+    <%= form_with url: user_user_cards_path(current_user), class: "form-filter", method: :get do |form| %>
+      <%= form.check_box :filter, { checked: params[:filter] == 'favorite', class: "checkbox" }, 'favorite', nil %>
+      <%= form.label :filter, 'Favorite Cards', for: 'filter_favorite', class: "label-filter" %>
+      <%= form.submit 'Filter', class: "btn-filter" %>
+    <% end %>
+  </div>
 
 
 
@@ -68,4 +69,5 @@
 
 
   <% end %>
+  </div>
 </div>
