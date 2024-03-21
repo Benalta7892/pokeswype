@@ -1,20 +1,25 @@
 <div class="container">
   <div class="row">
-    <div style="margin-top: 100px;">
+    <div class="display-collectors">
+      <div class="title-collectors">
+        <h2>Collectors List</h2>
+      </div>
       <%= link_to root_path, class: "arrow" do %>
         <%= image_tag asset_path('back-arrow.png') %>
       <% end %>
       <% @collectors.each do |collector| %>
-        <%= link_to collection_user_path(collector) do %>
-        <div class="card-collectors">
-          <%= image_tag collector.avatar %>
-          <div class="card-collectors-infos">
-            <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
-            <p><%= collector.email %></p>
-            <p> Number of cards : <%= collector.cards.count %> </p>
-            <p> Rating : <%= image_tag("etoile-rating.png") %></p>
+        <% unless collector == current_user %>
+          <%= link_to collection_user_path(collector) do %>
+          <div class="card-collectors">
+            <%= image_tag collector.avatar %>
+            <div class="card-collectors-infos">
+              <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
+              <p><%= collector.email %></p>
+              <p> Number of cards : <%= collector.cards.count %> </p>
+              <p> Rating : <%= image_tag("etoile-rating.png") %></p>
+            </div>
           </div>
-        </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
