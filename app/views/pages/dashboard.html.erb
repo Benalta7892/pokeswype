@@ -3,11 +3,12 @@
     <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
       <%= image_tag asset_path('back-arraw.png') %>
     <% end %>
-    <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %>
+    <%= link_to destroy_user_session_path, method: :delete, data: {turbo_method: :delete} do %>
+      <%= image_tag asset_path('deconnexion.png'), class: "deconect" %>
+    <% end %>
     <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
     <h1><%= @user.first_name %></h1>
     <p><%= @total_cards %> cards</p>
-    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
   </div>
 
   <%= link_to last_captured_dashboards_path do %>
