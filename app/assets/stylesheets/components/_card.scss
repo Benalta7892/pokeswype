@@ -12,10 +12,11 @@
   border-radius: 8px;
   cursor: pointer;
 
-  .enveloppe {
+  .deconect {
     position: absolute;
-    top: 14px;
+    top: 165px;
     right: 14px;
+    height: 34px;
   }
 
   .back-arraw {
@@ -122,6 +123,7 @@
     background: linear-gradient(0deg, rgba(255,255,255,0.592874649859944) 3%, #FCB5B5 48%);
     border: 1px solid #87C4C2;
     border-radius: 8px;
+    display: flex;
   }
 
   .onglet-profil-small2 {
@@ -141,6 +143,7 @@
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #EFB7E9 48%);
     border: 1px solid #87C4C2;
     border-radius: 8px;
+    display: flex;
   }
 
   .onglet-profil-small3 {
@@ -160,6 +163,7 @@
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #F9D2A2 48%);
     border: 1px solid #87C4C2;
     border-radius: 8px;
+    display: flex;
   }
 
   .onglet-profil-small4 {
@@ -179,6 +183,7 @@
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #6899C6 48%);
     border-radius: 8px;
     border: 1px solid #87C4C2;
+    display: flex;
   }
 }
 
@@ -484,4 +489,23 @@
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #41B4B2 48%);
   border-radius: 8px;
+}
+
+.display-collectors {
+  margin-top: 80px;
+
+  .title-collectors {
+    border: 1px solid #88B3C4;
+    box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
+    background: white;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.592875) 3%, #41B4B2 48%);
+    position: relative;
+    margin-bottom: 32px;
+    height: 68px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 58px;
+  }
 }

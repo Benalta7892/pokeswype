@@ -8,6 +8,7 @@ CardInterest.destroy_all
 UserCard.destroy_all
 Chatroom.destroy_all
 Exchange.destroy_all
+CardWish.destroy_all
 Card.destroy_all
 User.destroy_all
 
