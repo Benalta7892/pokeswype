@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     @exchange = Exchange.find(params[:exchange_id])
     @review = Review.new(review_params)
     @review.exchange = @exchange
-    @review.user = current_user
+    @review.user = @exchange.receiver
     if @review.save
       redirect_to exchange_path(@exchange)
     else
