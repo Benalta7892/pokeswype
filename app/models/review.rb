@@ -2,5 +2,8 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :exchange
 
-  validates :rating, presence: true, inclusion: { in: 1..5 }
+  AUTHORIZED_RATINGS = (1..5)
+
+  validates :rating, presence: true, inclusion: { in: AUTHORIZED_RATINGS }
+
 end
