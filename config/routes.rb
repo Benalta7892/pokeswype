@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   resources :exchanges, only: [:index, :show] do
     resources :chatrooms, only: [:create]
     resources :reviews, only: [:new, :create]
+    member do
+      get "status", to: "exchanges#update_status"
+    end
   end
 
   resources :users, only: [:show, :edit, :update] do

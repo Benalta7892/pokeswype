@@ -27,9 +27,15 @@ class ExchangesController < ApplicationController
     redirect_to exchange_path(@exchange)
   end
 
+  def update_status
+    @exchange = Exchange.find(params[:id])
+    @exchange.update(status: "finished")
+    redirect_to exchange_path(@exchange)
+  end
+
   private
 
   def exchange_params
-    params.require(:exchange).permit(:dealer_id, :receiver_id, :meeting_date, :address, :latitude, :longitude, :status)
+    params.require(:exchange).permit(:dealer_id, :receiver_id, :meeting_date, :address, :latitude, :longitude, :status, :qrcode)
   end
 end
