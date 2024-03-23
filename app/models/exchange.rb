@@ -21,7 +21,7 @@ class Exchange < ApplicationRecord
   end
 
   def default_url_options
-    { host: "www.pokeswype.xyz", protocol: "https" }
+    Rails.application.config.default_url_options
   end
 
   private
