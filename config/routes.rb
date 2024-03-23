@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     member do
       get "status", to: "exchanges#update_status"
+      get "qrcode", to: "exchanges#qrcode"
     end
   end
 
