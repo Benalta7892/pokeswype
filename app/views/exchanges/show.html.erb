@@ -51,7 +51,6 @@
   <%# lien vers la chatroom créée par le dealer pour le receiver %>
   <% if current_user == @exchange.receiver && @exchange.chatroom.present? %>
     <%= link_to "Open chatroom", chatroom_path(@exchange.chatroom), class: "link-chatroom" %>
-    <%= render 'qrcode', exchange: @exchange %>
   <% end %>
 
 <div class="review">

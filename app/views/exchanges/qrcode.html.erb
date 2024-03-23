@@ -1,1 +1,16 @@
-<h1>qrcode</h1>
+<%# app/views/exchanges/qrcode.html.erb %>
+
+<h1>Finalize & Rate Exchange</h1>
+
+<%# Card interests du current user %>
+<h2>Your selected cards</h2>
+<% @user_cards.each do |card_interest| %>
+  <%= image_tag(card_interest.card.image) %>
+<% end %>
+
+
+<%# QR code %>
+<h2>Scan this QR code to finalize the exchange</h2>
+<%= image_tag(url_for(@exchange.qrcode)) %>
+
+<%# Form to rate the exchange %>
