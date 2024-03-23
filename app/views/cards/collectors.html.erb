@@ -16,7 +16,10 @@
               <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
               <p><%= collector.email %></p>
               <p> Number of cards : <%= collector.cards.count %> </p>
-              <p> Rating : <%= image_tag("etoile-rating.png") %></p>
+              <% collector.average_rating.times do %>
+                <i class="review-rating far fa-star"></i>
+              <% end %>
+              </div></p>
             </div>
           </div>
           <% end %>

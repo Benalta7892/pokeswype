@@ -51,7 +51,16 @@
   <%# lien vers la chatroom créée par le dealer pour le receiver %>
   <% if current_user == @exchange.receiver && @exchange.chatroom.present? %>
     <%= link_to "Open chatroom", chatroom_path(@exchange.chatroom), class: "link-chatroom" %>
+    <%= render 'qrcode', exchange: @exchange %>
   <% end %>
+
+<div class="review">
+  <h2>Laissez une évaluation</h2>
+  <%= simple_form_for [@exchange, @review] do |f| %>
+    <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS%>
+    <%= f.submit class: "btn btn-primary", value: "Valider" %>
+  <% end %>
+</div>
 
 
 

@@ -53,6 +53,7 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "geocoder"
 gem 'hammerjs-rails'
+gem 'rqrcode'
 
 group :development, :test do
   gem "dotenv-rails"
