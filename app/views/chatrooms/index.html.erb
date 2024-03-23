@@ -6,7 +6,7 @@
     <%= link_to destroy_user_session_path, method: :delete, data: {turbo_method: :delete} do %>
       <%= image_tag asset_path('deconnexion.png'), class: "deconect" %>
     <% end %>
-    <%= image_tag asset_path('sacha-avatar.png'), class: "avatar-dashboard" %>
+    <%= image_tag asset_path(current_user.avatar), class: "avatar-dashboard" %>
     <h1><%= @user.first_name %></h1>
     <p><%= @total_cards %> cards</p>
   </div>

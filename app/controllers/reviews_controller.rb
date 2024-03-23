@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @review.exchange = @exchange
     @review.user = @exchange.receiver
     if @review.save
-      redirect_to exchange_path(@exchange)
+      redirect_to user_user_cards_path(current_user)
     else
       render "exchanges/show"
   end
