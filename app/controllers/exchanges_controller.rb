@@ -29,16 +29,34 @@ class ExchangesController < ApplicationController
 
   def update_status
     @exchange = Exchange.find(params[:id])
-    @exchange.update(status: "finished")
-    redirect_to exchange_path(@exchange)
+    if @exchange.update(status: "finished") && add_cards_to_collection
+      flash[:notice] = "Exchange finished"
+    end
+    redirect_to qrcode_exchange_path(@exchange)
   end
 
   def qrcode
     @exchange = Exchange.find(params[:id])
     @user_cards = @exchange.card_interests.where(user: current_user)
+    @review = Review.new
   end
 
   private
+
+  def add_cards_to_collection
+    @exchange.cards.each do |card|
+      add_card_to_user_collection(@exchange.receiver, card)
+      add_card_to_user_collection(@exchange.dealer, card)
+    end
+  end
+
+  def add_card_to_user_collection(user, card)
+    if UserCard.exists?(user: user, card: card)
+      UserCard.find_by(user: user, card: card).destroy
+    else
+      UserCard.create(user: user, card: card, exchangeable: false)
+    end
+  end
 
   def exchange_params
     params.require(:exchange).permit(:dealer_id, :receiver_id, :meeting_date, :address, :latitude, :longitude, :status, :qrcode)

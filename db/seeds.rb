@@ -3,6 +3,7 @@ require "open-uri"
 
 puts "Destroying all data..."
 
+Review.destroy_all
 Message.destroy_all
 CardInterest.destroy_all
 UserCard.destroy_all
@@ -44,10 +45,10 @@ end
 puts "Creating user_cards ..."
 
 UserCard.create!(user: ondine, card: Card.first, exchangeable: true)
-UserCard.create!(user: ondine, card: Card.second, exchangeable: true)
-UserCard.create!(user: ondine, card: Card.fourth, exchangeable: true)
+# UserCard.create!(user: ondine, card: Card.second, exchangeable: true)
+# UserCard.create!(user: ondine, card: Card.fourth, exchangeable: true)
 
-UserCard.create!(user: sacha, card: Card.first, exchangeable: true)
+# UserCard.create!(user: sacha, card: Card.first, exchangeable: true)
 UserCard.create!(user: sacha, card: Card.third, exchangeable: false)
 UserCard.create!(user: sacha, card: Card.fourth, exchangeable: true)
 
