@@ -34,6 +34,7 @@ class ExchangesController < ApplicationController
 
   def qrcode
     @exchange = Exchange.find(params[:id])
+    @user_cards = @exchange.card_interests.where(user: current_user)
   end
 
   private
