@@ -1,31 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="display-collectors">
-      <div class="title-collectors">
-        <h2>Collectors List</h2>
-      </div>
-      <%= link_to root_path, class: "arrow" do %>
-        <%= image_tag asset_path('back-arrow.png') %>
-      <% end %>
-      <% @collectors.each do |collector| %>
-        <% unless collector == current_user %>
-          <%= link_to collection_user_path(collector) do %>
-          <div class="card-collectors">
-            <%= image_tag collector.avatar %>
-            <div class="card-collectors-infos">
-              <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
-              <p><%= collector.email %></p>
-              <p> Number of cards : <%= collector.cards.count %> </p>
-              <% collector.average_rating.times do %>
-                <i class="review-rating far fa-star"></i>
-              <% end %>
-              </div></p>
-            </div>
+<div style="padding-bottom: 100px">
+  <div class="container">
+    <div class="row">
+      <div class="display-collectors">
+        <div class="title-collectors">
+          <h2>Collectors List</h2>
+        </div>
+        <%= link_to root_path, class: "arrow" do %>
+          <%= image_tag asset_path('back-arrow.png') %>
+        <% end %>
+        <% @collectors.each do |collector| %>
+          <% unless collector == current_user %>
+            <%= link_to collection_user_path(collector) do %>
+            <div class="card-collectors">
+              <%= image_tag collector.avatar %>
+              <div class="card-collectors-infos">
+                <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
+                <p><%= collector.email %></p>
+                <p> Number of cards : <%= collector.cards.count %> </p>
+                <% collector.average_rating.times do %>
+                  <i class="review-rating far fa-star"></i>
+                <% end %>
+                </div></p>
+              </div>
 
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-        </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
