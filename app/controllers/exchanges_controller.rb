@@ -33,6 +33,10 @@ class ExchangesController < ApplicationController
     redirect_to exchange_path(@exchange)
   end
 
+  def qrcode
+    @exchange = Exchange.find(params[:id])
+  end
+
   private
 
   def exchange_params
