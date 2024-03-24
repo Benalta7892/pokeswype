@@ -25,8 +25,8 @@ export default class extends Controller {
       },
       body: JSON.stringify({ card_id: cardId })
     });
-    card.classList.add('swipe-right');
-    setTimeout(() => card.remove(), 1000);
+    event.target.classList.add('swipe-right');
+
   }
 
   actionLeftSwipe(event) {

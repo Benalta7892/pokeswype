@@ -14,9 +14,6 @@ Card.destroy_all
 User.destroy_all
 
 
-# puts "Creating usersmessage"
-
-# Chatroom.create!(name: "general")
 
 puts "Creating users..."
 

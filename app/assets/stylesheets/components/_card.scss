@@ -505,3 +505,31 @@
     margin-bottom: 58px;
   }
 }
+  .swipe-right {
+    animation: swipeRight 2s forwards;
+  }
+
+  @keyframes swipeRight {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  .swipe-left {
+    animation: swipeLeft 2s forwards;
+  }
+  @keyframes swipeLeft {
+
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+}
