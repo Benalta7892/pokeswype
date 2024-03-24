@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import Hammer from "hammerjs";
+import Swal from "sweetalert2";
 
 
 export default class extends Controller {
@@ -26,6 +27,12 @@ export default class extends Controller {
       body: JSON.stringify({ card_id: cardId })
     });
     event.target.classList.add('swipe-right');
+    Swal.fire({
+      title: 'Great !',
+      text: 'Card added to your wishlist !',
+      icon: 'success',
+      confirmButtonText: 'Cool'
+    })
 
   }
 
