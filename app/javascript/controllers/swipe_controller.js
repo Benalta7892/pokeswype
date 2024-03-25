@@ -27,11 +27,15 @@ export default class extends Controller {
       body: JSON.stringify({ card_id: cardId })
     });
     event.target.classList.add('swipe-right');
+    setTimeout(() => card.remove(), 1000);
     Swal.fire({
       title: 'Great !',
       text: 'Card added to your wishlist !',
       icon: 'success',
-      confirmButtonText: 'Cool'
+      confirmButtonText: 'Cool',
+      didOpen: () => {
+        document.querySelector('.swal2-height-auto').classList.remove('swal2-height-auto');
+        }
     })
 
   }
@@ -40,12 +44,6 @@ export default class extends Controller {
     const card = event.target;
     card.classList.add('swipe-left');
     setTimeout(() => card.remove(), 1000);
-    Swal.fire({
-      title: 'Great !',
-      text: 'Card added to your wishlist !',
-      icon: 'success',
-      confirmButtonText: 'Cool'
-    })
   }
 
 }
