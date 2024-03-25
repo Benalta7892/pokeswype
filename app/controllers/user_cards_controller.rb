@@ -5,6 +5,7 @@ class UserCardsController < ApplicationController
   def index
     @user = current_user
     @user_cards = @user.user_cards
+    @total_cards = @user_cards.count
 
     if params[:filter] == "exchangeable"
       @user_cards = @user_cards.where(exchangeable: true)
