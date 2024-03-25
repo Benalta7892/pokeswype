@@ -13,8 +13,6 @@ CardWish.destroy_all
 Card.destroy_all
 User.destroy_all
 
-
-
 puts "Creating users..."
 
 pierre = User.create!(first_name: "Pierre", last_name: "Rochard", nickname: "pierre1", email: "pierre.r@gmail.com", password: "123456", address: "Paris", latitude: 48.8566, longitude: 2.3522, global_rating: 4, avatar: "pierre-avatar.png")
@@ -50,37 +48,45 @@ user = User.find_by(first_name: "Flora")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "Aurore")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "Serena")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "Régis")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "James")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "Professeur")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "Jessie")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 user = User.find_by(first_name: "Ondine")
 Card.all.each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
 
 user = User.find_by(first_name: "Sacha")
-Card.all.each do |card|
+Card.first(50).each do |card|
   UserCard.create(user: user, card: card, exchangeable: true)
 end
+
 puts "Finished!"
