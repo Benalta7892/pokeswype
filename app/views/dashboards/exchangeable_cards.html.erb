@@ -3,7 +3,7 @@
     <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
       <%= image_tag asset_path('back-arraw.png') %>
     <% end %>
-    <%= link_to destroy_user_session_path, method: :delete, data: {turbo_method: :delete} do %>
+    <%= link_to destroy_user_session_path, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to disconnect ?"} do %>
       <%= image_tag asset_path('deconnexion.png'), class: "deconect" %>
     <% end %>
     <%= image_tag asset_path(current_user.avatar), class: "avatar-dashboard" %>
