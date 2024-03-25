@@ -3,14 +3,12 @@
     <%= link_to root_path, class: "arrow" do %>
       <%= image_tag asset_path('back-arrow.png') %>
     <% end %>
-    <%# <div class="card-profil-search"> %>
-      <div class="card-show" data-swipe-target="cards">
+      <div  data-swipe-target="cards">
         <% if @cards.any? %>
           <% @cards.each do |card| %>
               <div class="card-profil-search">
                 <%= image_tag(card.image, {data: { card_id: card.id }  } ) %>
               </div>
-              <!-- <%# <h2><%= card.ready_for_exchange_collectors.count %> ready for an exchange</h2> %> -->
           <% end %>
         <% else %>
           <h1><em>Sorry, no cards found.</em><h1>

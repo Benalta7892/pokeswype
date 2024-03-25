@@ -12,8 +12,8 @@ export default class extends Controller {
   fire() {
     Swal.fire({
       title: "CONGRATS ! YOU HAVE A NEW CARD !",
-      background: "black",
-      color: "#716add",
+      background: "linear-gradient(0deg, rgba(255, 255, 255, 0.592874649859944) 3%, #EFB7E9 48%",
+      color: "white",
       confirmButtonText: "View card",
       denyButtonText: `Don't save`
     }).then((result) => {

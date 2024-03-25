@@ -40,6 +40,12 @@ export default class extends Controller {
     const card = event.target;
     card.classList.add('swipe-left');
     setTimeout(() => card.remove(), 1000);
+    Swal.fire({
+      title: 'Great !',
+      text: 'Card added to your wishlist !',
+      icon: 'success',
+      confirmButtonText: 'Cool'
+    })
   }
 
 }
