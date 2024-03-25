@@ -1,27 +1,23 @@
-<%# app/views/exchanges/qrcode.html.erb %>
 
-<h1>Finalize & Rate Exchange</h1>
-
-<%# Card interests du current user %>
-<h2>Your selected cards</h2>
-<% @user_cards.each do |card_interest| %>
-  <%= image_tag(card_interest.card.image) %>
-<% end %>
-
-
-<%# QR code %>
-<% if @exchange.status == "pending" %>
-  <h2>Scan this QR code to finalize the exchange</h2>
-  <%= image_tag(url_for(@exchange.qrcode)) %>
-<% end %>
-
-<%# Form to rate the exchange %>
-<% if @exchange.status == "finished" %>
-  <div class="review">
-    <h2>Laissez une évaluation</h2>
-    <%= simple_form_for [@exchange, @review] do |f| %>
-      <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS%>
-      <%= f.submit class: "btn btn-primary", value: "Valider" %>
+<div class="container" data-controller="sweet-alert">
+  <div class="row">
+  <h1>Finalize & Rate Exchange</h1>
+    <h2>Your selected cards</h2>
+      <% @user_cards.each do |card_interest| %>
+        <%= image_tag(card_interest.card.image) %>
+      <% end %>
+    <% if @exchange.status == "pending" %>
+      <h2>Scan this QR code to finalize the exchange</h2>
+      <%= image_tag(url_for(@exchange.qrcode)) %>
+    <% end %>
+    <% if @exchange.status == "finished" %>
+      <div class="review" data-sweet-alert-target="AddNewCard"   data-action="submit->sweet-alert#fire">
+        <h2>Laissez une évaluation</h2>
+        <%= simple_form_for [@exchange, @review] do |f| %>
+          <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS%>
+          <%= f.submit class: "btn btn-primary",value: "Valider" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
+</div>
