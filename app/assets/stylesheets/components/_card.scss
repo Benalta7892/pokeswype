@@ -265,19 +265,37 @@
 }
 
 .card-profil-search {
-  height: 150px;
   position: absolute;
-  transition: transform 0.5s ease;
-  top: 100px;
-  z-index: 6;
-  img {
-    margin-top: 12px;
-    margin-left: 0px;
-  }
+  width: 100px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: transform 1s;
+  display: flex;
+}
 
-  &:hover {
-    transform: rotate(-10deg) translateX(5px) translateY(-5px);
-  }
+.card-profil-search:nth-child(1) {
+  transform: rotate(-2deg) scale(0.9);
+}
+
+.card-profil-search:nth-child(2) {
+  transform: rotate(1deg) scale(0.92);
+}
+
+.card-profil-search:nth-child(3) {
+  transform: rotate(-1deg) scale(0.94);
+}
+
+.card-profil-search:nth-child(4) {
+  transform: rotate(2deg) scale(0.96);
+}
+
+.card-profil-search:nth-child(5) {
+  transform: rotate(0deg) scale(0.98);
+}
+
+.card-profil-search:nth-child(6) {
+  transform: rotate(-1deg) scale(1);
 }
 
 .card-collectors {
