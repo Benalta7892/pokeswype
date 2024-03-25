@@ -23,6 +23,10 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable
 
   def average_rating
-    reviews.average(:rating).to_i
+    if reviews.average(:rating).to_i == 0
+      global_rating
+    else
+      reviews.average(:rating).to_i
+    end
   end
 end
