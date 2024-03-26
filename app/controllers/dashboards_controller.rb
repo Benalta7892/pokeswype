@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @cards_collection = @user.cards
     @total_cards = @user.cards.count
-    @recent_cards = @user.cards.order(created_at: :desc)
+    @recent_cards = @user.cards.order(created_at: :asc).first(4)
   end
 
   def collection
