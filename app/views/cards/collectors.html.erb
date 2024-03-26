@@ -5,7 +5,7 @@
         <div class="title-collectors">
           <h2>Collectors List</h2>
         </div>
-        <%= link_to root_path, class: "arrow" do %>
+        <%= link_to wish_list_dashboards_path, class: "arrow" do %>
           <%= image_tag asset_path('back-arrow.png') %>
         <% end %>
         <% @collectors.each do |collector| %>
