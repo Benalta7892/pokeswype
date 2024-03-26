@@ -13,6 +13,8 @@ CardWish.destroy_all
 Card.destroy_all
 User.destroy_all
 
+
+
 puts "Creating users..."
 
 pierre = User.create!(first_name: "Pierre", last_name: "Rochard", nickname: "pierre1", email: "pierre.r@gmail.com", password: "123456", address: "Paris", latitude: 48.8566, longitude: 2.3522, global_rating: 4, avatar: "pierre-avatar.png")
@@ -39,54 +41,20 @@ end
 
 puts "Creating user_cards ..."
 
-user = User.find_by(first_name: "Pierre")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
+sacha = User.find_by(first_name: "Sacha")
+
+# Attribuer les 68 dernières cartes à Sacha
+Card.last(68).each_with_index do |card, index|
+  is_exchangeable = index < 4  # Les 4 premières cartes de Sacha sont échangeables
+  UserCard.create(user: sacha, card: card, exchangeable: is_exchangeable)
 end
 
-user = User.find_by(first_name: "Flora")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
+# Attribuer les 32 premières cartes aux autres utilisateurs
+users = User.where.not(first_name: "Sacha")
+users.each do |user|
+  Card.first(32).each_with_index do |card, index|
+    is_exchangeable = index < 12  # Les 12 premières cartes des autres utilisateurs sont échangeables
+    UserCard.create(user: user, card: card, exchangeable: is_exchangeable)
+  end
 end
-
-user = User.find_by(first_name: "Aurore")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "Serena")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "Régis")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "James")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "Professeur")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "Jessie")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "Ondine")
-Card.all.each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
-user = User.find_by(first_name: "Sacha")
-Card.first(50).each do |card|
-  UserCard.create(user: user, card: card, exchangeable: true)
-end
-
 puts "Finished!"
