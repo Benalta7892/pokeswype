@@ -7,6 +7,7 @@ class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.all
     @user = current_user
+    @total_chatrooms = Chatroom.all.count
   end
 
   def create

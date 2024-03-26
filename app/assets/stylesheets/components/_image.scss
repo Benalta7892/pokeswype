@@ -112,8 +112,11 @@
 
 }
 .mobile404 {
-
-  .img {
-    width: 100%;
-  }
+  margin: 3px;
+  background-image: asset-url("404Mobile.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
 }
