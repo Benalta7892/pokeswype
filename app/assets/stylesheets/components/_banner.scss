@@ -31,6 +31,9 @@ body {
   align-items: center;
   flex-direction: column;
   background: scroll;
+  img {
+    width: 200px;
+  }
   h2 {
     margin-top: 60px;
     margin-bottom: 16px;
