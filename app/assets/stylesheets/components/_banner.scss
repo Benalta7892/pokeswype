@@ -21,6 +21,9 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  h1 {
+    height: 650px;
+  }
   // background: scroll;
 }
 .container-show-exchange {
