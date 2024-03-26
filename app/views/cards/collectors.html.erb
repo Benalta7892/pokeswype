@@ -5,7 +5,7 @@
         <div class="title-collectors">
           <h2>Collectors List</h2>
         </div>
-        <%= link_to wish_list_dashboards_path, class: "arrow" do %>
+        <%= link_to root_path, class: "arrow" do %>
           <%= image_tag asset_path('back-arrow.png') %>
         <% end %>
         <% @collectors.each do |collector| %>
@@ -16,7 +16,7 @@
               <div class="card-collectors-infos">
                 <h2><%= collector.first_name %> , <%= collector.last_name %></h2>
                 <p><%= collector.email %></p>
-                <p> Number of cards : <%= collector.cards.count %> </p>
+                <p> Number of cards : <%= collector.user_cards.where(exchangeable: true).count %> </p>
                 <% collector.average_rating.times do %>
                   <i class="review-rating far fa-star"></i>
                 <% end %>

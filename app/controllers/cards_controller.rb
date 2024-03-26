@@ -18,6 +18,14 @@ class CardsController < ApplicationController
 
   def collectors
     @collectors = @card.ready_for_exchange_collectors
+    @exchangeable_cards_count = 0
+
+  # Compter les cartes échangeables pour chaque collectionneur
+  @collectors.each do |collector|
+    # Accéder aux cartes du collectionneur via la table UserCard
+    user_cards = collector.user_cards.where(card: @card)
+    @exchangeable_cards_count += user_cards.where(exchangeable: true).count
+  end
   end
 
   private
