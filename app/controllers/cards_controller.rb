@@ -7,6 +7,8 @@ class CardsController < ApplicationController
     if params[:query].present?
       @cards = @cards.where("name ILIKE ?", "%#{params[:query]}%")
     end
+    @cards_wished = current_user.cards_wished
+    @cards = @cards - @cards_wished
   end
 
   def index
@@ -20,12 +22,12 @@ class CardsController < ApplicationController
     @collectors = @card.ready_for_exchange_collectors
     @exchangeable_cards_count = 0
 
-  # Compter les cartes échangeables pour chaque collectionneur
-  @collectors.each do |collector|
-    # Accéder aux cartes du collectionneur via la table UserCard
-    user_cards = collector.user_cards.where(card: @card)
-    @exchangeable_cards_count += user_cards.where(exchangeable: true).count
-  end
+    # Compter les cartes échangeables pour chaque collectionneur
+    @collectors.each do |collector|
+      # Accéder aux cartes du collectionneur via la table UserCard
+      user_cards = collector.user_cards.where(card: @card)
+      @exchangeable_cards_count += user_cards.where(exchangeable: true).count
+    end
   end
 
   private

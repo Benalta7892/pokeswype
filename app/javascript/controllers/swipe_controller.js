@@ -10,8 +10,8 @@ export default class extends Controller {
   connect() {
     const cards = this.cardsTarget;
     const hammer = new Hammer(cards);
-    hammer.on("panleft", this.actionLeftSwipe.bind(this))
-    hammer.on("panright", this.actionRightSwipe.bind(this))
+    hammer.on("swipeleft", this.actionLeftSwipe.bind(this))
+    hammer.on("swiperight", this.actionRightSwipe.bind(this))
   }
   actionRightSwipe(event) {
     const index = this.cardsTarget.querySelectorAll('.card-profil-search').length - 1 ;
