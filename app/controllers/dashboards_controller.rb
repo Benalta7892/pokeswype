@@ -12,6 +12,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @cards_collection = @user.cards
     @total_cards = @user.cards.count
+    @card = Card.find_by(params[:id])
   end
 
   def favorites

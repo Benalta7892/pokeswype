@@ -202,8 +202,8 @@
   .pokemon-cards {
     margin-top: 36px;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
-    margin: 8px;
-    height: 258px;
+    margin: 14px;
+    height: 250px;
 
     &pokemon-card:hover {
       box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.8);
@@ -211,7 +211,7 @@
   }
 
   .card-dashboard {
-    margin-top: 50px;
+    // margin-top: 20px;
     position: relative;
     font-family: 'Pixelify Sans', sans-serif;
 
@@ -224,7 +224,7 @@
 
     .delete-card {
       position: absolute;
-      top: -14px;
+      top: 8px;
       right: -2px;
     }
   }
@@ -338,6 +338,12 @@
   padding: 16px;
   text-align: left;
   margin: auto;
+}
+
+.select-card {
+  text-align: center;
+  font-size: 22px;
+  color: #19466e;
 }
 
 .display-cards-collection {

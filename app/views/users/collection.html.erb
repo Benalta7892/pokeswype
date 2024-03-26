@@ -1,26 +1,26 @@
 <div style="padding-bottom: 100px;">
-  <div class="container">
-    <div class="card-profil">
-    <%= link_to (request.path == dashboard_path ? root_path : dashboard_path), class: "back-arraw" do %>
+  <div class="card-profil">
+    <%= link_to cards_path, class: "back-arraw" do %>
       <%= image_tag asset_path('back-arraw.png') %>
     <% end %>
-    <%= image_tag asset_path(current_user.avatar), class: "avatar-dashboard" %>
+    <%= link_to destroy_user_session_path, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to disconnect ?"} do %>
+      <%= image_tag asset_path('deconnexion.png'), class: "deconect" %>
+    <% end %>
+    <%= image_tag @user.avatar, class: "avatar-dashboard" %>
     <h1><%= @user.first_name %></h1>
     <p><%= @total_cards %> cards</p>
-    <%= image_tag asset_path('enveloppe-white.png'), class: "enveloppe" %>
   </div>
 
   <div class="title-exchangeable-cards">
     <h1>My exchangeable cards</h1>
   </div>
-  <div class="display-cards-collection">
-    <div class="card-dashboard">
+
       <% if @exchange.present? %>
         <%= render "form", url: user_exchange_path(user_id: @user.id, id: @exchange.id), method: :patch, exchangeable_cards: @exchangeable_cards %>
       <% else %>
         <%= render "form", url: user_exchanges_path(@user), method: :post, exchangeable_cards: @exchangeable_cards %>
       <% end %>
-      </div>
-    </div>
+
+
   </div>
 </div>
