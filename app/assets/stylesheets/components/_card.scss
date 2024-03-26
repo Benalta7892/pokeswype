@@ -249,6 +249,34 @@
   }
 }
 
+.card-show-qr {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-weight: bold;
+  }
+  h2 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  img {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    justify-self: center;
+    width: 350px;
+    z-index: 6;
+    box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+  }
+}
+
 .card-profil-show {
   display: flex;
   flex-direction: column;

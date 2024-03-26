@@ -31,6 +31,9 @@ body {
   align-items: center;
   flex-direction: column;
   background: scroll;
+  img {
+    width: 200px;
+  }
   h2 {
     margin-top: 60px;
     margin-bottom: 16px;
@@ -42,5 +45,13 @@ body {
     border: 1px solid #F9D2A2;
     width: 400px;
     font-size: 26px;
+  }
+}
+.chatroom {
+  p {
+    color: #19466e !important;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Pixelify Sans', sans-serif;
   }
 }

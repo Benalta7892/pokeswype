@@ -33,7 +33,7 @@
 
 <%# Lien pour selection de cartes du receiver dans la collection du dealer %>
   <% if current_user == @exchange.receiver && !@exchange.card_interests.exists?(user: @exchange.receiver) %>
-    <%= link_to "Select cards from #{@exchange.dealer.first_name}",
+    <%= link_to "Select cards : #{@exchange.dealer.first_name}",
       collection_user_path(@exchange.dealer, exchange_id: @exchange.id), class: "link-chatroom" %>
   <% end %>
 
