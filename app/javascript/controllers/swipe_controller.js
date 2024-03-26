@@ -10,14 +10,13 @@ export default class extends Controller {
   connect() {
     const cards = this.cardsTarget;
     const hammer = new Hammer(cards);
-    hammer.on("swipeleft", this.actionLeftSwipe.bind(this))
-    hammer.on("swiperight", this.actionRightSwipe.bind(this))
+    hammer.on("panleft", this.actionLeftSwipe.bind(this))
+    hammer.on("panright", this.actionRightSwipe.bind(this))
   }
   actionRightSwipe(event) {
-    // // const index = this.cardsTarget.querySelectorAll('.card-profil-search').length - 1 ;
-    // const card = this.cardsTarget.querySelectorAll('.card-profil-search')[index];
-    const card = event.target;
-    const cardId = card.dataset.cardId;
+    const index = this.cardsTarget.querySelectorAll('.card-profil-search').length - 1 ;
+    const card = this.cardsTarget.querySelectorAll('.card-profil-search')[index];
+    const cardId = event.target.dataset.cardId;
     console.log(card);
 
     fetch(`/card_wishes`, {
@@ -29,13 +28,15 @@ export default class extends Controller {
       body: JSON.stringify({ card_id: cardId })
     });
     event.target.classList.add('swipe-right');
-    setTimeout(() => card.remove(), 200);
+    setTimeout(() => card.remove(), 1000);
     const cards = this.cardsTarget;
-    if (cards.querySelectorAll('.card-profil-search').length === 0) {
+    if (cards.querySelectorAll('.card-profil-search').length === 1) {
       Swal.fire({
         title: 'No more cards !',
         text: 'You have seen all the cards !',
         icon: 'info',
+        background: 'transparent',
+        color: 'white',
         confirmButtonText: 'Ok'
       }).then((result) => {
         if (result.isConfirmed) {
@@ -44,10 +45,12 @@ export default class extends Controller {
       });
   } else {
         Swal.fire({
-          title: 'Great !',
+          title: 'Great ! ',
           text: 'Card added to your wishlist !',
           icon: 'success',
-          confirmButtonText: 'Cool'
+          confirmButtonText: 'Cool',
+          background: 'transparent',
+          color: 'white',
         });
     };
   }
@@ -58,14 +61,19 @@ export default class extends Controller {
     console.log(card);
     setTimeout(() => card.remove(), 1000);
     const cards = this.cardsTarget;
-    if (cards.querySelectorAll('.card-profil-search').length === 0) {
+    if (cards.querySelectorAll('.card-profil-search').length === 1) {
       Swal.fire({
         title: 'No more cards !',
         text: 'You have seen all the cards !',
         icon: 'info',
+        color: 'white',
+        background: 'transparent',
         confirmButtonText: 'Ok',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/";
+        }
       });
-    };
+    }
   }
-
 }
