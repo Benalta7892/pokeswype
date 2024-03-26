@@ -8,7 +8,7 @@
     <% end %>
     <%= image_tag asset_path(current_user.avatar), class: "avatar-dashboard" %>
     <h1><%= @user.first_name %></h1>
-    <p><%= @total_cards %> cards</p>
+    <p><%= pluralize(@total_chatrooms, "conversation", plural: "conversations") %></p>
   </div>
 
 <% @chatrooms.each do |chatroom| %>

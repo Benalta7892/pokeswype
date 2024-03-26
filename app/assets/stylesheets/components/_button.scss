@@ -7,10 +7,16 @@
   // margin-top: 20px;
 }
 
+.display-notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .notification {
   font-family: 'Pixelify Sans', sans-serif;
   margin: 8px;
-  background-color: #ffe557;
+  background-color: #ffbc54;
 }
 .button {
   font-family: 'Pixelify Sans', sans-serif;
