@@ -13,10 +13,12 @@ export default class extends Controller {
     hammer.on("swipeleft", this.actionLeftSwipe.bind(this))
     hammer.on("swiperight", this.actionRightSwipe.bind(this))
   }
-
   actionRightSwipe(event) {
+    // // const index = this.cardsTarget.querySelectorAll('.card-profil-search').length - 1 ;
+    // const card = this.cardsTarget.querySelectorAll('.card-profil-search')[index];
     const card = event.target;
     const cardId = card.dataset.cardId;
+    console.log(card);
 
     fetch(`/card_wishes`, {
       method: 'POST',
@@ -27,25 +29,43 @@ export default class extends Controller {
       body: JSON.stringify({ card_id: cardId })
     });
     event.target.classList.add('swipe-right');
-    Swal.fire({
-      title: 'Great !',
-      text: 'Card added to your wishlist !',
-      icon: 'success',
-      confirmButtonText: 'Cool'
-    })
-
+    setTimeout(() => card.remove(), 200);
+    const cards = this.cardsTarget;
+    if (cards.querySelectorAll('.card-profil-search').length === 0) {
+      Swal.fire({
+        title: 'No more cards !',
+        text: 'You have seen all the cards !',
+        icon: 'info',
+        confirmButtonText: 'Ok'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/";
+        };
+      });
+  } else {
+        Swal.fire({
+          title: 'Great !',
+          text: 'Card added to your wishlist !',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        });
+    };
   }
-
   actionLeftSwipe(event) {
-    const card = event.target;
+    const index = this.cardsTarget.querySelectorAll('.card-profil-search').length - 1 ;
+    const card = this.cardsTarget.querySelectorAll('.card-profil-search')[index];
     card.classList.add('swipe-left');
+    console.log(card);
     setTimeout(() => card.remove(), 1000);
-    Swal.fire({
-      title: 'Great !',
-      text: 'Card added to your wishlist !',
-      icon: 'success',
-      confirmButtonText: 'Cool'
-    })
+    const cards = this.cardsTarget;
+    if (cards.querySelectorAll('.card-profil-search').length === 0) {
+      Swal.fire({
+        title: 'No more cards !',
+        text: 'You have seen all the cards !',
+        icon: 'info',
+        confirmButtonText: 'Ok',
+      });
+    };
   }
 
 }

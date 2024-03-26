@@ -18,7 +18,7 @@ export default class extends Controller {
       denyButtonText: `Don't save`
     }).then((result) => {
       if (result.isConfirmed) {
-          window.location.href = "/users/:id/user_cards";
+          window.location.href = "/dashboards/last_captured";
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
       }

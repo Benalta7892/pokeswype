@@ -1,9 +1,9 @@
 
-  <div class="container-search" data-controller="swipe">
+  <div  data-controller="swipe">
     <%= link_to root_path, class: "arrow" do %>
       <%= image_tag asset_path('back-arrow.png') %>
     <% end %>
-      <div  data-swipe-target="cards">
+      <div  class="container-search" data-swipe-target="cards">
         <% if @cards.any? %>
           <% @cards.each do |card| %>
               <div class="card-profil-search">
