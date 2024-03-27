@@ -1,5 +1,4 @@
 .chatroom {
-  background: white;
   margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
@@ -21,13 +20,43 @@
 
   #new_message {
     border-top: 1px solid $gray-200;
-    padding: 1rem;
+    padding: 12px;
+    border-radius: 8px;
 
     .form-group {
       margin-bottom: 0;
     }
   }
+  p {
+    color: white !important;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+  h2 {
+    margin-top: 10px;
+  }
+  a {
+    font-family: 'Pixelify Sans', sans-serif;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 26px;
+  }
+  input {
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    font-family: 'Pixelify Sans', sans-serif;
+    border-radius: 8px;
+  }
+  .btn {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.592875) 3%, #EFB7E9 48%);
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 8px;
+    color: #19466e;
+    font-size: 18px;
+  }
 }
+
 
 .chatroom-index {
   display: flex;
