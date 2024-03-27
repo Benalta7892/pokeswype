@@ -1,6 +1,6 @@
 
   <%= form_with url: url, method: method, class: "form-filter-update" do |form| %>
-  <div class="display-cards">
+  <div class="display-cards-collection">
     <% exchangeable_cards.each do |user_card| %>
       <div class="card-dashboard">
         <%= link_to card_path(user_card.card) do %>
@@ -12,7 +12,7 @@
         </div>
       </div>
     <% end %>
-    <%= form.submit "Validate choice", class: "update-card" %>
+    <%= form.submit "Validate choice", class: "validate-choice" %>
   </div>
   <% end %>
 </div>

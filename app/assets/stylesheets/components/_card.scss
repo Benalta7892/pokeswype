@@ -192,6 +192,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  // justify-content: center;
   a {
     width: 50%;
   }
@@ -377,7 +378,7 @@
 .display-cards-collection {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 8px;
 
@@ -385,10 +386,23 @@
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
     margin: 8px;
     height: 258px;
+    border-radius: 8px;
 
     &pokemon-card:hover {
       box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.8);
     }
+  }
+
+  .validate-choice {
+    font-family: 'Pixelify Sans', sans-serif;
+    margin: 24px;
+    padding: 8px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.592875) 3%, #EFB7E9 48%);
+    border-radius: 8px;
+    color: #19466e;
+    font-size: 20px;
+    border: none;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.4);
   }
 
   .card-dashboard {
