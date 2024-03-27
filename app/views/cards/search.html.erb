@@ -10,10 +10,10 @@
               <div class="card-profil-search">
                 <%= image_tag(card.image, {data: { card_id: card.id }  } ) %>
               </div>
-              <div class="icone"><i class="fa-solid fa-heart-crack" style="color: #19466e;"></i>
-                <strong style="color: #19466e;">|</strong> <i class="fa-solid fa-heart" style="color: #19466e;"></i>
-              </div>
           <% end %>
+            <div class="icone"><i class="fa-solid fa-heart-crack" style="color: #19466e;"></i>
+              <strong style="color: #19466e;">|</strong> <i class="fa-solid fa-heart" style="color: #19466e;"></i>
+            </div>
         <% else %>
           <h1 style="color: #19466e;"><em>Sorry, no cards found.</em><h1>
         <% end %>
