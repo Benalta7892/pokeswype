@@ -4,7 +4,7 @@
       <%= image_tag asset_path('back-arrow.png') %>
     <% end %>
       <div  class="container-search" data-swipe-target="cards">
-      <h1>   <- Unlike                |                Like -> </h1>
+      <h1></h1>
         <% if @cards.any? %>
           <% @cards.each do |card| %>
               <div class="card-profil-search">
@@ -14,7 +14,8 @@
         <% else %>
           <h1><em>Sorry, no cards found.</em><h1>
         <% end %>
-      <i class="fa-solid fa-arrows-left-right">Swipe</i>
+      <div class="icone"><i class="fa-solid fa-heart-crack" style="color: #19466e;"></i>
+      | <i class="fa-solid fa-heart" style="color: #19466e;"></i>
+      </div>
   </div>
 </div>
-Swipe
