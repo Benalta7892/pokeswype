@@ -20,7 +20,7 @@
 
   #new_message {
     border-top: 1px solid $gray-200;
-    padding: 1rem;
+    padding: 12px;
     border-radius: 8px;
 
     .form-group {
@@ -39,7 +39,8 @@
   a {
     font-family: 'Pixelify Sans', sans-serif;
     margin-left: 12px;
-    margin-bottom: 12px;
+    margin-right: 12px;
+    margin-bottom: 26px;
   }
   input {
     box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.1);
@@ -52,6 +53,7 @@
     border: none;
     border-radius: 8px;
     color: #19466e;
+    font-size: 18px;
   }
 }
 
